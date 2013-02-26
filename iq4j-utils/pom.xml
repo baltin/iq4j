@@ -1,0 +1,14 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <artifactId>iq4j</artifactId>
+    <groupId>com.iq4j</groupId>
+    <version>0.0.1</version>
+  </parent>
+  
+  <artifactId>iq4j-utils</artifactId>
+  <name>IQ4J-Utils</name>
+  <description>IQ4J framework - Utils Package</description>
+  
+</project>
