@@ -6,7 +6,7 @@
        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/beans_1_0.xsd"
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:s="urn:java:ee"
-       xmlns:ai4j-utils="urn:java:com.ai4j.utils">
+       xmlns:iq4j-utils="urn:java:com.iq4j.utils">
        
 	<interceptors>
 		<class>com.iq4j.utils.interceptor.ElapsedTimeInterceptor</class>
