@@ -8,7 +8,7 @@ import com.iq4j.faces.composites.GeneralKeys;
 @FacesComponent(IntegerRangeInput.COMPONENT_TYPE)
 public class IntegerRangeInput extends Input {
 	
-	public static final String COMPONENT_TYPE = "com.ai4j.faces.composites.components.IntegerRange";
+	public static final String COMPONENT_TYPE = "com.iq4j.faces.composites.components.IntegerRange";
 	
 	@Override
 	protected void onEncodeBegin() {

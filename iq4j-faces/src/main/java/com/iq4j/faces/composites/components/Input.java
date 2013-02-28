@@ -22,7 +22,7 @@ import com.iq4j.faces.composites.GeneralKeys;
 @FacesComponent(Input.COMPONENT_TYPE)
 public class Input extends UIComponentBase implements NamingContainer {
 	
-	public static final String COMPONENT_TYPE = "com.ai4j.faces.composites.components.Input";
+	public static final String COMPONENT_TYPE = "com.iq4j.faces.composites.components.Input";
 
 	protected List<UIInput> validInputs = new ArrayList<UIInput>(0);
 	

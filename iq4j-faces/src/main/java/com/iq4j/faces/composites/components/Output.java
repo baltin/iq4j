@@ -13,7 +13,7 @@ import com.iq4j.faces.composites.CompositeHelper;
 @FacesComponent(Output.COMPONENT_TYPE)
 public class Output extends UIComponentBase implements	NamingContainer {
 	
-	public static final String COMPONENT_TYPE = "com.ai4j.faces.composites.components.Output";
+	public static final String COMPONENT_TYPE = "com.iq4j.faces.composites.components.Output";
 
 	
 	@Override
