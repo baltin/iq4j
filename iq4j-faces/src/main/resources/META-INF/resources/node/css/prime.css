@@ -1,0 +1,27 @@
+.ui-widget-content .ui-state-highlight{background: #0073EA; color: white;}
+
+
+/*  .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{border:1px solid #cccccc;background:#ffffff url("#{resource['primefaces-flick:images/ui-bg_flat_55_ffffff_40x100.png']}") 50% 50% repeat-x !important;color:#444444;}
+*/
+
+.ui-dialog .ui-dialog-buttonpane {padding-right: 0 !important;}
+
+.ui-menubar .ui-menuitem-link .ui-menuitem-icon { width:24px; height: 24px; } 
+.mainMenu .ui-button-icon-only .ui-icon, 
+.ui-menubar .ui-button-text-icon-left .ui-icon, 
+.ui-menubar .ui-button-text-icon-right .ui-icon  { width:24px; height: 24px; margin-top: -11px !important;}
+
+.ui-menubutton .ui-button-text-icon-left .ui-icon  { width:16px; height: 16px; margin-top:-8px !important;}
+.ui-menubar .ui-menuitem-link {line-height: 24px !important;}
+
+.ui-menubar { background: none; border:none;}
+.ui-menubar > .ui-menu-list > .ui-menuitem > .ui-menuitem-link span.ui-icon-triangle-1-e, .ui-menubar > .ui-menu-list > .ui-menuitem > .ui-menuitem-link span.ui-icon-triangle-1-s {
+    margin-top: 3px; 
+}
+
+.ui-menubar .ui-menuitem-link {border: none !important; padding:0 10px 0 0 !important;}
+.ui-menu {padding:0 !important;}
+
+.ui-panel {padding-top : 5px;}
+
+.ui-selectmanycheckbox label, .ui-selectoneradio label { margin-top: -4px !important;}

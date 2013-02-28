@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+     
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+		      	xmlns:h="http://java.sun.com/jsf/html"
+		      	xmlns:f="http://java.sun.com/jsf/core"
+		      	xmlns:ui="http://java.sun.com/jsf/facelets"
+		      	xmlns:n="http://node-faces.com"
+		      	xmlns:o="http://omnifaces.org/ui"
+		      	xmlns:c="http://java.sun.com/jsp/jstl/core"
+		      	xmlns:p="http://primefaces.org/ui"
+		      	xmlns:pe="http://primefaces.org/ui/extensions">
+		
+	<n:default var="fid" value="f"/>      	 	 
+	<n:default var="rendered" value="true"/>      	 	 
+	<n:default var="dialog" value="false"/>
+	<n:default var="cancelOutcome" value="cancel"/>
+	<n:default var="header" value=""/>	 
+	<n:default var="showHeader" value="#{header ne ''}"/>
+	 	
+	<o:methodParam name="action1" value="#{saveAction}" />
+	<o:methodParam name="action2" value="#{cancelOutcome}" />
+	 
+	<h:form id="#{fid}" rendered="#{rendered}">
+		
+		<p:panel id="panel" > 
+			
+			<c:if test="#{showHeader}">
+			
+				<f:facet name="header">
+				
+					<h:outputText value="#{header}"/>
+					
+				</f:facet>
+
+			</c:if>
+			
+			<div class="cmp_form_content #{contentStyleClass}">
+				
+				<ui:insert/>	
+			
+			</div>
+			
+			
+			<div class="cmp_form_actions ui-panel-footer ui-widget-content ">
+			
+				<ui:insert name="actions" >
+					<p:commandButton value="Save"
+									 id="save"
+									 action="#{action1}"
+									 styleClass="cmp_form_ok"
+									 process="@form" >
+									 
+						<n:update onSuccess="#{updateOnSuccess}" updateFormOnSuccess="#{!dialog}"/>
+						<n:closeDialog enabled="#{dialog}" considerFacesValidation="true"/>
+									 
+					</p:commandButton>	
+					
+					
+					
+					<ui:insert name="customActions" />
+					
+					<p:commandButton value="Cancel"
+									 id="cancel"
+									 styleClass="cmp_form_cancel right"
+									 process="@this" 
+									 action="#{action2}">
+						
+						<n:closeDialog enabled="#{dialog}" />
+						
+						<pe:resetInput for="ctx" />	
+						
+									 
+					</p:commandButton>
+					
+				</ui:insert>
+			</div>
+				
+		
+		</p:panel>	
+					
+		<p:blockUI block="panel" trigger="save"/>    	 
+		
+	</h:form>
+	
+		
+</ui:composition>

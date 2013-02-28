@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	<composite:interface componentType="com.node.faces.composites.components.IntegerRange">
+	
+		<composite:attribute name="value" required="true" type="com.node.core.utils.model.Range"/>
+					
+		<composite:attribute name="validatorId"  default="integerRangeInputValidator" type="java.lang.String"/>
+		<composite:attribute name="allowEquality" type="java.lang.Boolean" default="false" />
+		<composite:attribute name="maxlength" type="java.lang.Integer" default="2" />
+		<composite:attribute name="divider" type="java.lang.String" default=" ~ " />
+		
+		<composite:attribute name="labelPosition" default="left" type="java.lang.String" shortDescription="Label position : top or left. default is left"/>
+		<composite:attribute name="label" default="" type="java.lang.String" />	
+		<composite:attribute name="valid" default="true" type="java.lang.Boolean" />
+		<composite:attribute name="immediateProcess" default="false" type="java.lang.Boolean" />
+		<composite:attribute name="showLabel" default="true" type="java.lang.Boolean" />
+		<composite:attribute name="styleClass" default="cmp_input" type="java.lang.String"/>
+		<composite:attribute name="labelStyleClass" default="" type="java.lang.String"/>
+		<composite:attribute name="required" default="false" type="java.lang.Boolean"/>		
+		<composite:attribute name="showErrorMsg" default="true" type="java.lang.Boolean"/>
+		
+	</composite:interface>
+	
+	<composite:implementation xmlns:pe="http://primefaces.org/ui/extensions">
+		
+		<h:panelGroup layout="block" styleClass="#{cc.attrs.styleClass}" id="ctx">
+			
+			<h:outputLabel value="#{cc.attrs.label}" 
+						   styleClass="cmp_blck cmp_lbl cmp_#{cc.attrs.labelPosition}lbl #{cc.attrs.labelStyleClass}"
+						   rendered="#{cc.attrs.showLabel}"
+						   id="lbl"/>
+						   
+			<h:outputText value=":"  
+						  id="sp"
+						  styleClass="cmp_sp cmp_blck"/>
+			
+			<h:panelGroup styleClass="cmp_blck" >
+					
+					<p:inputText  id="min" 
+								  converter="javax.faces.Integer" 
+								  converterMessage="Value must be a number" 
+								  label="Minimum" 
+								  maxlength="#{cc.attrs.maxlength}" 
+								  value="#{cc.attrs.value.min}"
+								  required="#{cc.attrs.required}"
+								  size="1"
+								  title="Minimum Value">
+								  
+						<p:ajax process="@this" disabled="#{!cc.attrs.immediateProcess}"/>		  
+					
+					</p:inputText>
+					
+					<pe:tooltip for="min"/>
+					
+					<h:outputText value="#{cc.attrs.divider}" styleClass="cmp_sp" />
+					
+					<p:inputText  id="max" 
+								  value="#{cc.attrs.value.max}"
+								  maxlength="#{cc.attrs.maxlength}"
+								  converter="javax.faces.Integer" 
+								  converterMessage="Value must be a number"
+								  label="Maximum" 
+								  required="#{cc.attrs.required}" 
+								  size="1" 
+								  title="Maximum value" >
+						
+						<p:ajax process="@this" disabled="#{!cc.attrs.immediateProcess}"/>	
+							  
+					</p:inputText>			  
+					
+					<pe:tooltip for="max" />
+					
+					<h:inputHidden id="validator">
+						<f:validator  validatorId="#{cc.attrs.validatorId}" />
+					</h:inputHidden>
+								  			   				
+			
+			</h:panelGroup>
+			
+			<h:message id="msg" 
+					   styleClass="cmp_errmsg cmp_#{cc.attrs.labelPosition}err cmp_blck"
+					   for="#{cc.id}"
+					   rendered="#{cc.attrs.showErrorMsg}"/> 
+					   						   
+			<pe:tooltip for="#{cc.id}" rendered="#{!cc.attrs.showErrorMsg}" id="tt" position="left center" targetPosition="right center" />
+				
+		</h:panelGroup>
+	
+	</composite:implementation>
+	
+</ui:composition>
