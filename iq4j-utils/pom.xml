@@ -9,7 +9,6 @@
   
   <artifactId>iq4j-utils</artifactId>
   <name>IQ4J-Utils</name>
-  <version>0.0.1</version>
   <description>IQ4J framework - Utils Package</description>
   
   <dependencies>

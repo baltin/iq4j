@@ -9,7 +9,7 @@
        xmlns:node-core="urn:java:com.node.core">
        
 	<interceptors>
-		<class>com.node.core.utils.interceptor.ElapsedTimeInterceptor</class>
+		<class>com.iq4j.utils.interceptor.ElapsedTimeInterceptor</class>
 	</interceptors>
 
 </beans>
