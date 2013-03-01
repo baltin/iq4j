@@ -1,0 +1,68 @@
+/* Core styles for the page */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F1F1F1;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 0.8em;
+  color:#363636;
+}
+
+#top{margin:auto;width: 1000px;padding: 0; height: 40px;}
+
+#container {
+  margin: 0px auto;
+  padding: 10px;
+  border-top: 5px solid #000000;
+  border-left: 5px solid #8c8f91;
+  border-right: 5px solid #8c8f91;
+  border-bottom: 25px solid #8c8f91;
+  width: 980px; /* subtract 40px from banner width for padding */
+  background: #FFFFFF;
+  background-image: url(#{resource['iq4j:gfx/headerbkg.png']});
+  background-repeat: repeat-x;
+  box-shadow: 3px 3px 15px #d5d5d5;
+  min-height: 600px;
+}
+
+#content {float: left;width: 100%;}
+#footer {clear: both;text-align: center;color: #666666;font-size: 0.85em;margin: auto;width:980px;}
+code {font-size: 1.1em;}
+a {color: #4a5d75; text-decoration: none;}
+a:hover {color: #369;text-decoration: underline;}
+h1 {margin:5px;color:#243446;font-size: 2.25em;}
+h2 {font-size: 1em;}
+h3 {color:#243446;}
+h4 {}
+h5 {}
+h6 {}
+form {padding: 0em;}
+.logo{width: 200px;}
+.nav{width:760px; text-align: right;}
+
+img{border:none;}
+
+/* List && Single Page Crud */
+
+.page-header{width:100%;text-align:left;font-size:1.4em;font-weight:bold;}	
+.right-text, .page-actions{text-align:right;}
+
+
+.right{ float: right; }
+
+/* Icons */
+.ico-general{ background:url(#{resource['iq4j:gfx/blocks_images.png']}) no-repeat !important; } 
+.ico-airplane{ background:url(#{resource['iq4j:gfx/airplane.png']}) no-repeat !important;} 
+.ico-house{ background:url(#{resource['iq4j:gfx/house.png']}) no-repeat !important;} 
+.ico-globe{ background:url(#{resource['iq4j:gfx/globe.png']}) no-repeat !important;} 
+.ico-money{ background:url(#{resource['iq4j:gfx/money.png']}) no-repeat !important;} 
+.ico-connection{ background:url(#{resource['iq4j:gfx/connection.png']}) no-repeat !important;} 
+.ico-hotels{ background:url(#{resource['iq4j:gfx/hotels.png']}) no-repeat !important;} 
+.ico-definitions{ background:url(#{resource['iq4j:gfx/definitions.png']}) no-repeat !important;} 
+.ico-folder{ background:url(#{resource['iq4j:gfx/folder.png']}) no-repeat !important;} 
+.ico-search{ background:url(#{resource['iq4j:gfx/magnifying_glass.png']}) no-repeat !important;} 
+.ico-wizard{ background:url(#{resource['iq4j:gfx/wizard.png']}) no-repeat !important;} 
+.ico-cursor{ background:url(#{resource['iq4j:gfx/cursor.png']}) no-repeat !important;} 
+.ico-plus{ background:url(#{resource['iq4j:gfx/plus.png']}) no-repeat !important;} 
+.ico-bended-arrow-up{ background:url(#{resource['iq4j:gfx/bended_arrow_up.png']}) no-repeat !important;} 
+.ui-state-hover .ico-bended-arrow-up{ background:url(#{resource['iq4j:gfx/bended_arrow_up_l.png']}) no-repeat !important;} 

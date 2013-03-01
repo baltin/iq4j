@@ -94,18 +94,18 @@
 	<!-- Facelets -->
 	<tag>
 		<tag-name>custom</tag-name>
-		<source>resources/node/facelets/custom.xhtml</source>
+		<source>resources/iq4j/facelets/custom.xhtml</source>
 	</tag>
 
 	<tag>
 		<tag-name>composition</tag-name>
-		<source>resources/node/facelets/composition.xhtml</source>
+		<source>resources/iq4j/facelets/composition.xhtml</source>
 	</tag>
 
 	<tag>
 		<tag-name>form</tag-name>
 		
-		<source>resources/node/facelets/form.xhtml</source>
+		<source>resources/iq4jj/facelets/form.xhtml</source>
 		
 		<attribute>
 			<name>id</name>
