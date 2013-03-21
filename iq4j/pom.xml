@@ -11,6 +11,7 @@
 
 	<modules>
 		<module>../iq4j-utils</module>
+		<module>../iq4j-persistence</module>
 		<module>../iq4j-faces</module>
 	</modules>
 
@@ -93,6 +94,13 @@
 			<dependency>
 				<groupId>com.iq4j</groupId>
 				<artifactId>iq4j-utils</artifactId>
+				<version>0.0.1</version>
+				<type>jar</type>
+			</dependency>
+
+			<dependency>
+				<groupId>com.iq4j</groupId>
+				<artifactId>iq4j-persistence</artifactId>
 				<version>0.0.1</version>
 				<type>jar</type>
 			</dependency>
