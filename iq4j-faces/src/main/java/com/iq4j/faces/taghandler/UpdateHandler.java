@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.el.ValueExpression;
 import javax.faces.component.UICommand;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
@@ -42,8 +43,8 @@ public class UpdateHandler extends TagHandler {
 		
 			boolean updateFormOnSuccess = this.updateFormOnSuccessAttribute == null ? true : this.updateFormOnSuccessAttribute.getBoolean(ctx);
 			
-			List<String> onSuccessList = createUpdateList(onSuccessAttribute);
-			List<String> onFailureList = createUpdateList(onFailureAttribute);
+			List<String> onSuccessList = createUpdateList(onSuccessAttribute, ctx);
+			List<String> onFailureList = createUpdateList(onFailureAttribute, ctx);
 			
 			parent.subscribeToEvent(PostValidateEvent.class, new UpdateEventListener(onSuccessList, onFailureList, updateFormOnSuccess));
 			parent.subscribeToEvent(PostInvokeActionEvent.class, new UpdateEventListener(onSuccessList, onFailureList, updateFormOnSuccess));
@@ -52,21 +53,26 @@ public class UpdateHandler extends TagHandler {
 		
 	}
 
-    private List<String> createUpdateList(TagAttribute attribute) {
+    private List<String> createUpdateList(TagAttribute attribute, FaceletContext ctx) {
 		
 		List<String> result = new ArrayList<String>(0);
 		
 		if ( attribute != null) {
-			
-			String[] renderIds = attribute.getValue()
-									.replaceAll("[\\s;]", ",")
-									.replaceAll(",+", ",")
-								    .replaceAll(",:", ",")
-								    .split(",");
-			
-			for (String string : renderIds) {
-				result.add(string.startsWith(":") ? string.replaceFirst(":", "") : string);
+			ValueExpression ve = attribute.getValueExpression(ctx, String.class);
+			Object value = ve.getValue(ctx.getFacesContext().getELContext());
+			if(value != null) {
+				
+				String[] renderIds = value.toString()
+										.replaceAll("[\\s;]", ",")
+										.replaceAll(",+", ",")
+										.replaceAll(",:", ",")
+										.split(",");
+				
+				for (String string : renderIds) {
+					result.add(string.startsWith(":") ? string.replaceFirst(":", "") : string);
+				}
 			}
+			
 		}
 		return result;
 	}

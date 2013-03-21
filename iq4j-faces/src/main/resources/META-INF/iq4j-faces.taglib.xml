@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<facelet-taglib xmlns="http://java.sun.com/xml/ns/javaee"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facelettaglibary_2_0.xsd"
-	version="2.0">
+<facelet-taglib id="iq"
+				xmlns="http://java.sun.com/xml/ns/javaee"
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facelettaglibary_2_0.xsd"
+				version="2.0">
 
 	<namespace>http://iq4j.com/ui</namespace>
 	
@@ -105,7 +106,7 @@
 	<tag>
 		<tag-name>form</tag-name>
 		
-		<source>resources/iq4jj/facelets/form.xhtml</source>
+		<source>resources/iq4j/facelets/form.xhtml</source>
 		
 		<attribute>
 			<name>id</name>
@@ -136,6 +137,11 @@
 		<attribute>
 			<name>rendered</name>
 			<type>java.lang.Boolean</type>
+		</attribute>
+
+		<attribute>
+			<name>updateOnSuccess</name>
+			<type>java.lang.String</type>
 		</attribute>
 
 		<attribute>

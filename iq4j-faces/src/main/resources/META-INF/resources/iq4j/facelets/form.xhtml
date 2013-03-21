@@ -10,17 +10,18 @@
 		      	xmlns:p="http://primefaces.org/ui"
 		      	xmlns:pe="http://primefaces.org/ui/extensions">
 		
-	<n:default var="fid" value="f"/>      	 	 
+	<n:default var="id" value="f"/>      	 	 
 	<n:default var="rendered" value="true"/>      	 	 
 	<n:default var="dialog" value="false"/>
 	<n:default var="cancelOutcome" value="cancel"/>
 	<n:default var="header" value=""/>	 
 	<n:default var="showHeader" value="#{header ne ''}"/>
+	<n:default var="updateOnSuccess" value=""/>
 	 	
 	<o:methodParam name="action1" value="#{saveAction}" />
 	<o:methodParam name="action2" value="#{cancelOutcome}" />
 	 
-	<h:form id="#{fid}" rendered="#{rendered}">
+	<h:form id="#{id}" rendered="#{rendered}">
 		
 		<p:panel id="panel" > 
 			
