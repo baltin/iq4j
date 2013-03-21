@@ -92,6 +92,29 @@
 		
 	</tag>
 	
+	<tag>
+	
+		<description>
+		<![CDATA[
+			<p>Generic Entity Converter </p>
+		]]>
+		</description>
+		<tag-name>entityConverter</tag-name>
+		<handler-class>com.iq4j.faces.taghandler.EntityConverterHandler</handler-class>
+
+		<attribute>
+			<name>entity</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+
+		<attribute>
+			<name>noSelectionValue</name>
+			<type>java.lang.String</type>
+		</attribute>
+		
+	</tag>
+	
 	<!-- Facelets -->
 	<tag>
 		<tag-name>custom</tag-name>
