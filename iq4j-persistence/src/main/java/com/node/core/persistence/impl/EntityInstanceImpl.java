@@ -25,6 +25,8 @@ public class EntityInstanceImpl<E extends Entity<ID>, ID extends Serializable> e
 	@Inject
 	Validation validation;
 
+	@Inject EntityManager entityManager;
+	
 	private Class<E> entityClass;
 
 	@SuppressWarnings("unchecked")
@@ -45,9 +47,13 @@ public class EntityInstanceImpl<E extends Entity<ID>, ID extends Serializable> e
 
 	@Override
 	public EntityManager getEntityManager() {
-		return null;
+		return entityManager;
 	}
 
+	public void setEntityManager(EntityManager entityManager) {
+		this.entityManager = entityManager;
+	}
+	
 	@Override
 	public E getInstance() {
 		if (instance == null) {
