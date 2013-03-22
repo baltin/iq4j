@@ -67,4 +67,13 @@ public class DateUtils {
     	
 	}
 	
+	/**
+	 * @return Today's date 
+	 */
+	public static Date today() {
+		
+		return new DateTime(System.currentTimeMillis()).withTime(0, 0, 0, 0).toDate();
+		
+	}
+	
 }
