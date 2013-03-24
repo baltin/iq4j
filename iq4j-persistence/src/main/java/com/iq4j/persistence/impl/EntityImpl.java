@@ -1,4 +1,4 @@
-package com.node.core.persistence.impl;
+package com.iq4j.persistence.impl;
 
 import java.io.Serializable;
 
@@ -6,7 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
-import com.node.core.persistence.api.Entity;
+import com.iq4j.persistence.api.Entity;
 
 @MappedSuperclass
 public abstract class EntityImpl<ID extends Serializable> implements Entity<ID> {

@@ -1,4 +1,4 @@
-package com.node.core.persistence.qualifiers;
+package com.iq4j.persistence.qualifiers;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;

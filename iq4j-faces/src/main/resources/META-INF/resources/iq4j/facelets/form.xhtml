@@ -45,7 +45,7 @@
 			<div class="cmp_form_actions ui-panel-footer ui-widget-content ">
 			
 				<ui:insert name="actions" >
-					<p:commandButton value="Save"
+					<p:commandButton value="#{iq4jMsg['save']}"
 									 id="save"
 									 action="#{action1}"
 									 styleClass="cmp_form_ok"
@@ -60,7 +60,7 @@
 					
 					<ui:insert name="customActions" />
 					
-					<p:commandButton value="Cancel"
+					<p:commandButton value="#{iq4jMsg['cancel']}"
 									 id="cancel"
 									 styleClass="cmp_form_cancel right"
 									 process="@this" 

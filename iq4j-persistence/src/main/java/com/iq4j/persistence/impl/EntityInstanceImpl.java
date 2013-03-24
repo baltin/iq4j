@@ -1,4 +1,4 @@
-package com.node.core.persistence.impl;
+package com.iq4j.persistence.impl;
 
 import java.io.Serializable;
 
@@ -8,12 +8,12 @@ import javax.persistence.EntityManager;
 import org.hibernate.Session;
 import org.jboss.seam.international.status.Messages;
 
+import com.iq4j.persistence.api.Entity;
+import com.iq4j.persistence.api.EntityInstance;
+import com.iq4j.persistence.service.EntityEvents;
 import com.iq4j.utils.ClassUtils;
 import com.iq4j.utils.impl.InstanceImpl;
 import com.iq4j.utils.validation.Validation;
-import com.node.core.persistence.api.Entity;
-import com.node.core.persistence.api.EntityInstance;
-import com.node.core.persistence.service.EntityEvents;
 
 public class EntityInstanceImpl<E extends Entity<ID>, ID extends Serializable> extends InstanceImpl<E> implements EntityInstance<E, ID> {
 
@@ -25,7 +25,8 @@ public class EntityInstanceImpl<E extends Entity<ID>, ID extends Serializable> e
 	@Inject
 	Validation validation;
 
-	@Inject EntityManager entityManager;
+	@Inject 
+	EntityManager entityManager;
 	
 	private Class<E> entityClass;
 
@@ -130,7 +131,7 @@ public class EntityInstanceImpl<E extends Entity<ID>, ID extends Serializable> e
 		if (validate()) {
 			getEntityManager().joinTransaction();
 			onUpdate();
-			getEntityManager().merge(getInstance());
+			instance = getEntityManager().merge(getInstance());
 			if( ((Session) getEntityManager().getDelegate()).isDirty()) {				
 				getEntityManager().flush();
 				EntityEvents.updated(getInstance());
@@ -159,9 +160,9 @@ public class EntityInstanceImpl<E extends Entity<ID>, ID extends Serializable> e
 	@Override
 	public boolean save() {
 		if (isManaged()) {
-			return persist();
-		} else {
 			return update();
+		} else {
+			return persist();
 		}
 	}
 

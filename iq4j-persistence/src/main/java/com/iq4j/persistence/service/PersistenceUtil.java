@@ -1,6 +1,5 @@
-package com.node.core.persistence.service;
+package com.iq4j.persistence.service;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -10,12 +9,16 @@ import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Order;
 
-public class PersistenceUtil implements Serializable {
-	private static final long serialVersionUID = -276417828563635020L;
+import org.jboss.seam.transaction.Transactional;
 
-	protected EntityManager entityManager;
-
+@Transactional
+public class PersistenceUtil {
+	
 	@Inject
+	protected transient EntityManager entityManager;
+	
+	public PersistenceUtil() {}
+	
 	public PersistenceUtil(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
@@ -29,12 +32,10 @@ public class PersistenceUtil implements Serializable {
 	}
 
 	public <T> void create(final T entity) {
-		getEntityManager().joinTransaction();
 		getEntityManager().persist(entity);
 	}
 
 	public <T> void delete(final T entity) throws NoResultException {
-		getEntityManager().joinTransaction();
 		getEntityManager().remove(entity);
 	}
 
@@ -55,7 +56,6 @@ public class PersistenceUtil implements Serializable {
 	}
 
 	public <T> void save(final T entity) {
-		getEntityManager().joinTransaction();
 		getEntityManager().merge(entity);
 	}
 
@@ -90,6 +90,7 @@ public class PersistenceUtil implements Serializable {
 		return query.getResultList();
 	}
 
+	
 	public <T> List<T> findAll(final Class<T> type) {
 		CriteriaQuery<T> query = query(type);
 		query.from(type);

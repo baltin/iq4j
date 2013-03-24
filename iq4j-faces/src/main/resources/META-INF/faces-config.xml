@@ -11,7 +11,12 @@
 		<converter-for-class>java.lang.Enum</converter-for-class>
 		<converter-class>javax.faces.convert.EnumConverter</converter-class>
 	</converter>
-	
+	<application>
+		<resource-bundle>
+			<base-name>iq4j-faces</base-name>
+			<var>iq4jMsg</var>
+		</resource-bundle>
+	</application>
 	
 	
 </faces-config>

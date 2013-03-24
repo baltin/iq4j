@@ -1,4 +1,4 @@
-package com.node.core.persistence.api;
+package com.iq4j.persistence.api;
 
 import java.io.Serializable;
 

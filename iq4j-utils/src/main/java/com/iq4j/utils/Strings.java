@@ -40,13 +40,10 @@ public class Strings {
 
 	public static String toString(Object component) {
 		try {
-			PropertyDescriptor[] props = Introspector.getBeanInfo(
-					component.getClass()).getPropertyDescriptors();
+			PropertyDescriptor[] props = Introspector.getBeanInfo(component.getClass()).getPropertyDescriptors();
 			StringBuilder builder = new StringBuilder();
 			for (PropertyDescriptor descriptor : props) {
-				builder.append(descriptor.getName()).append('=')
-						.append(descriptor.getReadMethod().invoke(component))
-						.append("; ");
+				builder.append(descriptor.getName()).append('=').append(descriptor.getReadMethod().invoke(component)).append("; ");
 			}
 			return builder.toString();
 		} catch (Exception e) {
@@ -118,25 +115,16 @@ public class Strings {
 	}
 
 	public static String splitCamelCase(String s) {
-		   return s.replaceAll(
-		      String.format("%s|%s|%s",
-		         "(?<=[A-Z])(?=[A-Z][a-z])",
-		         "(?<=[^A-Z])(?=[A-Z])",
-		         "(?<=[A-Za-z])(?=[^A-Za-z])"
-		      ),
-		      " "
-		   );
+		return s.replaceAll(String.format("%s|%s|%s", "(?<=[A-Z])(?=[A-Z][a-z])", "(?<=[^A-Z])(?=[A-Z])", "(?<=[A-Za-z])(?=[^A-Za-z])"),
+				" ");
 	}
-	
+
 	public static String capitalize(String str) {
-        int strLen;
-        if (str == null || (strLen = str.length()) == 0) {
-            return str;
-        }
-        return new StringBuilder(strLen)
-            .append(Character.toTitleCase(str.charAt(0)))
-            .append(str.substring(1))
-            .toString();
-    }
-	
+		int strLen;
+		if (str == null || (strLen = str.length()) == 0) {
+			return str;
+		}
+		return new StringBuilder(strLen).append(Character.toTitleCase(str.charAt(0))).append(str.substring(1)).toString();
+	}
+
 }

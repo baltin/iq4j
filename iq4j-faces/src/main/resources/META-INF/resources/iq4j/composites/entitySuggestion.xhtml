@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:composite="http://java.sun.com/jsf/composite"
+				xmlns:pe="http://primefaces.org/ui/extensions"
+				xmlns:p="http://primefaces.org/ui"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	<composite:interface componentType="com.iq4j.faces.composites.components.Input">
+		
+		<composite:attribute name="value" required="true"/>
+		<composite:attribute name="entity" required="true" type="java.lang.String"/>		
+		<composite:attribute name="suggestionBean" required="true" type="com.iq4j.faces.api.Suggestion"/>			
+		<composite:attribute name="minQueryLength" default="1" required="true" type="java.lang.Integer"/>		
+		<composite:attribute name="inputSize" default="20" type="java.lang.Integer" />
+
+		<composite:attribute name="labelPosition" default="left" type="java.lang.String" shortDescription="Label position : top or left. default is left"/>
+		<composite:attribute name="label" default="" type="java.lang.String" />	
+		<composite:attribute name="editable" default="true" type="java.lang.Boolean" />
+		<composite:attribute name="valid" default="true" type="java.lang.Boolean" />
+		<composite:attribute name="showLabel" default="true" type="java.lang.Boolean" />
+		<composite:attribute name="inputStyleClass" type="java.lang.String"/>
+		<composite:attribute name="styleClass" default="cmp_input" type="java.lang.String"/>
+		<composite:attribute name="labelStyleClass" default="" type="java.lang.String"/>
+		<composite:attribute name="required" default="false" type="java.lang.Boolean"/>		
+		<composite:attribute name="showErrorMsg" default="true" type="java.lang.Boolean"/>	    
+			
+	</composite:interface>
+	
+	<composite:implementation xmlns:n="http://iq4j.com/ui">
+		
+		<h:panelGroup id="ctx" layout="block" styleClass="#{cc.attrs.styleClass}">
+			
+			<h:outputLabel id="lbl" value="#{cc.attrs.label}" rendered="#{cc.attrs.showLabel}" styleClass="cmp_blck cmp_lbl cmp_#{cc.attrs.labelPosition}lbl #{cc.attrs.labelStyleClass}" />
+						   
+			<h:outputText id="sp" value=":" styleClass="cmp_sp cmp_blck"/>
+			
+			<h:panelGroup styleClass="cmp_blck" layout="block">	  
+				
+				<p:autoComplete id="i" value="#{cc.attrs.value}" completeMethod="#{cc.attrs.suggestionBean.list}"  var="var" itemValue="#{var}" 
+								itemLabel="#{cc.attrs.suggestionBean.labelForInstance(var)}"	forceSelection="true"  required="#{cc.attrs.required}" 
+								minQueryLength="#{cc.attrs.minQueryLength}" readonly="#{!cc.attrs.editable}" size="#{cc.attrs.inputSize}" styleClass="#{cc.attrs.inputStyleClass}">
+							    					
+					<n:entityConverter entity="#{cc.attrs.entity}" noSelectionValue="#{cc.attrs.noSelectionLabel}"/>
+					
+					<composite:insertChildren/>
+					
+				</p:autoComplete> 		
+			
+			</h:panelGroup>
+			
+			<h:message id="msg" for="#{cc.id}" rendered="#{cc.attrs.showErrorMsg}" styleClass="cmp_errmsg cmp_#{cc.attrs.labelPosition}err cmp_blck"/> 
+					   						   
+			<pe:tooltip for="#{cc.id}" rendered="#{!cc.attrs.showErrorMsg}" id="tt" position="left center" targetPosition="right center" />
+				
+		</h:panelGroup>
+		
+	</composite:implementation>
+	
+</ui:composition>

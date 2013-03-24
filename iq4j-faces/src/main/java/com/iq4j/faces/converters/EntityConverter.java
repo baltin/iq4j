@@ -1,6 +1,8 @@
 package com.iq4j.faces.converters;
 
 
+import static com.iq4j.faces.composites.CompositeHelper.getStringValue;
+
 import java.io.Serializable;
 
 import javax.enterprise.context.RequestScoped;
@@ -14,9 +16,6 @@ import javax.persistence.EntityManager;
 
 import com.iq4j.faces.session.EntityTypeStore;
 import com.iq4j.utils.Strings;
-
-import static com.iq4j.faces.composites.CompositeHelper.getStringValue;
-import static com.iq4j.faces.composites.CompositeHelper.getBooleanValue;
 
 /**
  * Converter for JPA entities. Uses the id of the entity for the key.
@@ -33,27 +32,20 @@ public class EntityConverter implements javax.faces.convert.Converter{
 	EntityManager entityManager;
 	
 	@Inject EntityTypeStore entityTypeStore;
-	
-
 
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String value) {
 	
     	String entity = getStringValue(component, "entity");
     	String noSelectionValue = getStringValue(component, "noSelectionValue"); 
-    	boolean convertAsProxy = getBooleanValue(component, "convertAsProxy");
     	
 		if( !Strings.isEmpty(value) && ( isSelectOne(component) ? !value.equals(noSelectionValue) : true ) ) {	
 			
 			Class<?> entityType = entityTypeStore.findType(entity);
 			Class<?> idType = entityTypeStore.findIdType(entity);
 			Object id = convertStringToId(idType, value);
-			
-			if(convertAsProxy) {				
-				return this.entityManager.find(entityType, id);
-			} else {
-				return this.entityManager.getReference(entityType, id);
-			}
+			return entityManager.find(entityType, id);
+
 		}
 		return null;
     }

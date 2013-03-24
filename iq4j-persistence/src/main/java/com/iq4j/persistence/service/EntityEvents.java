@@ -1,14 +1,14 @@
-package com.node.core.persistence.service;
+package com.iq4j.persistence.service;
 
 import java.lang.annotation.Annotation;
 
 import javax.enterprise.util.AnnotationLiteral;
 
+import com.iq4j.persistence.qualifiers.EntityCreated;
+import com.iq4j.persistence.qualifiers.EntityDeleted;
+import com.iq4j.persistence.qualifiers.EntityRead;
+import com.iq4j.persistence.qualifiers.EntityUpdated;
 import com.iq4j.utils.BeanUtils;
-import com.node.core.persistence.qualifiers.EntityCreated;
-import com.node.core.persistence.qualifiers.EntityDeleted;
-import com.node.core.persistence.qualifiers.EntityRead;
-import com.node.core.persistence.qualifiers.EntityUpdated;
 
 
 @SuppressWarnings("serial")

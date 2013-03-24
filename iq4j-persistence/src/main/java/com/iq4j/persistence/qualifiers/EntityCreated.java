@@ -1,4 +1,4 @@
-package com.node.core.persistence.qualifiers;
+package com.iq4j.persistence.qualifiers;
 
 import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.ElementType.METHOD;
@@ -16,4 +16,4 @@ import javax.inject.Qualifier;
 @Target({ TYPE, METHOD, PARAMETER, FIELD })
 @Retention(RUNTIME)
 @Documented
-public @interface EntityUpdated {}
+public @interface EntityCreated {}

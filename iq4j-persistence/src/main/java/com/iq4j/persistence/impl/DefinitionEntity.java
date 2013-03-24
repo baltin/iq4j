@@ -1,4 +1,4 @@
-package com.node.core.persistence.impl;
+package com.iq4j.persistence.impl;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;

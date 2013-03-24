@@ -13,14 +13,19 @@
 	<artifactId>iq4j-persistence</artifactId>
 	<name>IQ4J-Persistence</name>
 	<description>IQ4J Framework - Persistence Package</description>
-	
-	
+
+
 	<dependencies>
 
 		<dependency>
 			<groupId>javax.enterprise</groupId>
 			<artifactId>cdi-api</artifactId>
 			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.seam.persistence</groupId>
+			<artifactId>seam-persistence</artifactId>
 		</dependency>
 
 		<dependency>
