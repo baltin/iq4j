@@ -45,15 +45,20 @@
 			<div class="cmp_form_actions ui-panel-footer ui-widget-content ">
 			
 				<ui:insert name="actions" >
+
 					<p:commandButton value="#{iq4jMsg['save']}"
 									 id="save"
 									 action="#{action1}"
 									 styleClass="cmp_form_ok"
-									 process="@form" >
+									 process="@form" 
+									 icon="icon-ok" >
 									 
 						<n:update onSuccess="#{updateOnSuccess}" updateFormOnSuccess="#{!dialog}"/>
 						<n:closeDialog enabled="#{dialog}" considerFacesValidation="true"/>
-									 
+						
+						<ui:insert name="saveListeners"/>
+						
+								 
 					</p:commandButton>	
 					
 					
@@ -63,15 +68,16 @@
 					<p:commandButton value="#{iq4jMsg['cancel']}"
 									 id="cancel"
 									 styleClass="cmp_form_cancel right"
-									 process="@this" 
+									 process="@this"
+									 icon="icon-remove" 
 									 action="#{action2}">
 						
 						<n:closeDialog enabled="#{dialog}" />
 						
-						<pe:resetInput for="ctx" />	
+						<pe:resetInput for="panel" />	
 						
 									 
-					</p:commandButton>
+					</p:commandButton >
 					
 				</ui:insert>
 			</div>

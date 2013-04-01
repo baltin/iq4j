@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:composite="http://java.sun.com/jsf/composite"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:iq="http://iq4j.com/ui"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:pe="http://primefaces.org/ui/extensions">
+	<head>
+		<title>Not present in rendered output</title>
+	</head>
+	
+	<body>
+	
+		<composite:interface>			
+					
+			<composite:attribute name="saveAction" method-signature="void action()" default="#{emptyAction.execute}"/>
+			<composite:attribute name="cancelAction" method-signature="void action()" default="#{emptyAction.execute}"/>	
+			
+			<composite:actionSource name="saveActionSource"  targets="save" />
+			<composite:actionSource name="cancelActionSource"  targets="cancel" />
+			
+			<composite:attribute name="header" default="Edit Form" type="java.lang.String" />
+			<composite:attribute name="minWidth" default="500" type="java.lang.Integer" />
+			<composite:attribute name="width" default="600" type="java.lang.Integer" />
+			
+			<composite:attribute name="dialogId" default="dlg" type="java.lang.String" />
+			<composite:attribute name="updateOnFailed"  type="java.lang.String" />
+			<composite:attribute name="updateOnSucceed" type="java.lang.String" />
+			<composite:attribute name="updateOnCancel" type="java.lang.String" default="@none" />			
+			<composite:attribute name="validationErrorGroup" type="java.lang.String" default=""/>
+			<composite:attribute name="contentStyleClass" type="java.lang.String" default=""/>
+			
+		
+								
+		</composite:interface>
+		
+		<composite:implementation xmlns:nc="http://java.sun.com/jsf/composite/node/composites">
+			
+			<p:dialog id="#{cc.attrs.dialogId}"
+					  widgetVar="_#{cc.attrs.dialogId}"
+					  draggable="true"
+					  width="#{cc.attrs.width}"	
+					  minWidth="#{cc.attrs.minWidth}"
+					  modal="true"
+					  closable="false"
+					  dynamic="false"
+					  header="#{cc.attrs.header}"
+					  resizable="false">
+			
+			
+					<h:form id="f" >
+		
+						<p:panel id="ctx" > 
+							
+							<div class="cmp_form_content #{cc.attrs.contentStyleClass}">
+								
+								<composite:insertChildren/>	
+							
+							</div>
+							
+							
+							<div class="cmp_form_actions ui-panel-footer ui-widget-content ">
+							
+				
+								<p:commandButton value="#{iq4jMsg['save']}"
+												 id="save"
+												 action="#{cc.attrs.saveAction}"
+												 styleClass="cmp_form_ok"
+												 process="@form" 
+												 icon="icon-ok" >
+												 
+									<iq:update onSuccess="#{cc.attrs.updateOnSucceed}" onFailure="cc.attrs.updateOnFailed" updateFormOnSuccess="false"  />
+									<iq:closeDialog considerFacesValidation="true" />
+									
+								</p:commandButton>	
+								
+								<p:commandButton value="#{iq4jMsg['cancel']}"
+												 id="cancel"
+												 styleClass="cmp_form_cancel right"
+												 process="@this"
+												 icon="icon-remove"
+												 update="#{cc.attrs.updateOnCancel}" 
+												 action="#{cc.attrs.cancelAction}">
+									
+									<iq:closeDialog  />
+									<pe:resetInput for="ctx" />	
+												 
+								</p:commandButton >
+								
+							</div>
+								
+						
+						</p:panel>	
+									
+						<p:blockUI block="ctx" trigger="save"/>    	 
+						
+					</h:form>
+		
+			</p:dialog>
+						
+		</composite:implementation>
+	
+	</body>
+
+</html>

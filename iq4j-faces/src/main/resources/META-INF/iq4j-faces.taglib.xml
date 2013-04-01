@@ -154,7 +154,6 @@
 				]]>
 			</description>
 			<name>cancelOutcome</name>
-			<type>java.lang.String</type>
 		</attribute>
 
 		<attribute>
