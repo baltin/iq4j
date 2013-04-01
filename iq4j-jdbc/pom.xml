@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>iq4j</artifactId>
+		<groupId>com.iq4j</groupId>
+		<version>0.0.1</version>
+		<relativePath>../iq4j/pom.xml</relativePath>
+	</parent>
+
+	<artifactId>iq4j-jdbc</artifactId>
+	<name>IQ4J-JDBC</name>
+    <description>IQ4J framework - JDBC Package</description>
+    
+	<dependencies>
+	
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-dbutils</groupId>
+			<artifactId>commons-dbutils</artifactId>
+			<version>${apache-commons-dbutils.version}</version>
+		</dependency>
+	
+	</dependencies>
+
+
+</project>
