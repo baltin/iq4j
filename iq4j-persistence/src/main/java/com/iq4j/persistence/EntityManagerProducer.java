@@ -24,6 +24,7 @@ public class EntityManagerProducer {
 		entityManager = entityManagerFactory.createEntityManager();
 		Session session = (Session) entityManager.getDelegate();
 		session.setFlushMode(FlushMode.MANUAL);
+		
 	}
 
 	@Produces
