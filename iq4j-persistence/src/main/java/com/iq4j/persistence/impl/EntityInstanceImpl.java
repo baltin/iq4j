@@ -97,7 +97,7 @@ public class EntityInstanceImpl<E extends Entity<ID>, ID extends Serializable> e
 	}
 
 	protected E find(ID id) {
-
+		//TODO throw custom exception for null id parameter	
 		E result = getEntityManager().find(getEntityClass(), id);
 
 		if (result == null) {

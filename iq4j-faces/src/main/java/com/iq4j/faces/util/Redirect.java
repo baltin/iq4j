@@ -3,6 +3,7 @@ package com.iq4j.faces.util;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 
 import org.omnifaces.util.Messages;
@@ -17,14 +18,32 @@ public class Redirect {
 	}
 
 	public Redirect(String viewId) {
-		super();
+		
 		this.params = new HashMap<String, String>();
+		
 		if (viewId == null) {
 			viewId = FacesContext.getCurrentInstance().getViewRoot().getViewId();
+		}  
+		
+		if(!viewId.startsWith("/")){
+			viewId = "/" + viewId;
 		}
+
 		this.viewId = viewId;
 	}
 
+	public static void to(String viewId) {
+		Redirect.instance(viewId).facesRedirect().to();
+	}
+	
+	public static String outcome(String viewId) {
+		return Redirect.instance(viewId).facesRedirect().outcome();
+	}
+	
+	public static Redirect instance(String viewId) {
+		return new Redirect(viewId);
+	}
+	
 	public Redirect param(String paramName, Object paramValue) {
 		if(paramValue != null) {			
 			return param(paramName, paramValue.toString());
@@ -67,7 +86,8 @@ public class Redirect {
 	
 	public void to() {
 		try {			
-			FacesContext.getCurrentInstance().getExternalContext().redirect(outcome());
+			ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
+			externalContext.redirect( externalContext.getRequestContextPath() + outcome() );
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
