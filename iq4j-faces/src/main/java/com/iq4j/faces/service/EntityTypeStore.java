@@ -1,4 +1,4 @@
-package com.iq4j.faces.session;
+package com.iq4j.faces.service;
 
 import java.util.Collections;
 import java.util.HashMap;

@@ -14,7 +14,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 
-import com.iq4j.faces.session.EntityTypeStore;
+import com.iq4j.faces.service.EntityTypeStore;
 import com.iq4j.utils.Strings;
 
 /**

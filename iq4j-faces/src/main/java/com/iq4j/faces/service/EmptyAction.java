@@ -1,4 +1,4 @@
-package com.iq4j.faces.session;
+package com.iq4j.faces.service;
 
 import javax.enterprise.inject.Model;
 

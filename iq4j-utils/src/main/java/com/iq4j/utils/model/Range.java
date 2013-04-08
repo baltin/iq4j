@@ -7,7 +7,7 @@ public interface Range<T> extends Serializable{
 	public T getMin();
 
 	public T getMax();
-
+	
 	public boolean isSetted();
 
 	public boolean isEmpty();

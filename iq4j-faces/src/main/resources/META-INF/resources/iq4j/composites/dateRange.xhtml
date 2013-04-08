@@ -9,7 +9,7 @@
 	
 	<composite:interface componentType="com.iq4j.faces.composites.components.DateRange">
 	
-		<composite:attribute name="value" required="true" type="com.iq4j.core.utils.model.Range" />		
+		<composite:attribute name="value" required="true" type="com.iq4j.utils.model.EditablePeriod" />		
 		<composite:attribute name="validatorId"  default="dateRangeInputValidator" type="java.lang.String"/>
 		<composite:attribute name="allowEquality" type="java.lang.Boolean" default="false" />
 		<composite:attribute name="divider" type="java.lang.String" default=" ~ " />
@@ -39,7 +39,7 @@
 						  styleClass="cmp_sp cmp_blck"/>
 			
 			<h:panelGroup styleClass="cmp_blck" rendered="#{cc.attrs.value ne null}">
-			
+
 				<p:calendar id="min" 
 							pattern="#{dateFormat.value}"
 							navigator="true" 
