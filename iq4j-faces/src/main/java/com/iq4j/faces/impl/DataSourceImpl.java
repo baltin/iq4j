@@ -1,4 +1,4 @@
-package com.iq4j.faces.api.impl;
+package com.iq4j.faces.impl;
 
 import java.io.Serializable;
 import java.util.List;
