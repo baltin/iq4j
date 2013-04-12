@@ -1,6 +1,7 @@
 package com.iq4j.utils.model;
 
 
+
 public abstract class RangeImpl<T extends Comparable<T>> implements Range<T> {
 
 	private static final long serialVersionUID = -5034074155264916277L;
@@ -75,6 +76,47 @@ public abstract class RangeImpl<T extends Comparable<T>> implements Range<T> {
 		return isValid() && compare(value, getMin()) > -1 && compare(value, getMax()) < 1;
 	};
 	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((getMin() == null) ? 0 : getMin().hashCode());
+		result = prime * result + ((getMax() == null) ? 0 : getMax().hashCode());
+		return result;
+		
+	}
 	
+	public boolean equals(Object o) {
+		
+		if (this == o)
+			return true;
+		
+		if (o == null)
+			return false;
+		
+		if (!(o instanceof Period))
+			return false;
+		
+		Period other = (Period)o;
+		
+		if(getMin() == null  ) {
+			if(other.getMin() != null)
+				return false;
+		}
+		
+		if(!getMin().equals(other.getMin()))
+			return false;
+		
+		if(getMax() == null  ) {
+			if(other.getMax() != null)
+				return false;
+		}
+		
+		if(!getMax().equals(other.getMax()))
+			return false;
+		
+		return true;
+		
+	}
 	
 }

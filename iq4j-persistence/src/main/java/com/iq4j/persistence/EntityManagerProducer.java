@@ -18,7 +18,6 @@ public class EntityManagerProducer {
 
 	private EntityManager entityManager;
 	
-
 	@PostConstruct
 	protected void init() {
 		entityManager = entityManagerFactory.createEntityManager();

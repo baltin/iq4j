@@ -8,6 +8,20 @@ import org.joda.time.DateTime;
 
 public class DateUtils {
 	
+	
+	/**
+	 * Check two dates equality regarding only date parts and omitting time parts
+	 * 
+	 * null parameters are supposed to be new Date() 
+	 * 
+	 * @param date1
+	 * @param date2
+	 * @return true if given date's date parts are equal otherwise false
+	 */
+	public static boolean dateEquals(Date date1, Date date2) {
+		return new DateTime(date1).withMillisOfDay(0).compareTo(new DateTime(date2).withMillisOfDay(0)) == 0;
+	}
+	
 	/***
 	 * Compares two dates and returns the highest
 	 * 
