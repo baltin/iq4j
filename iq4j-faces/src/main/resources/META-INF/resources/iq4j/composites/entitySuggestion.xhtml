@@ -14,6 +14,8 @@
 		<composite:attribute name="suggestionBean" required="true" type="com.iq4j.faces.api.Suggestion"/>			
 		<composite:attribute name="minQueryLength" default="1" required="true" type="java.lang.Integer"/>		
 		<composite:attribute name="inputSize" default="20" type="java.lang.Integer" />
+		
+		<composite:attribute name="scrollHeight" default="250" />	
 
 		<composite:attribute name="labelPosition" default="left" type="java.lang.String" shortDescription="Label position : top or left. default is left"/>
 		<composite:attribute name="label" default="" type="java.lang.String" />	
@@ -40,7 +42,8 @@
 				
 				<p:autoComplete id="i" value="#{cc.attrs.value}" completeMethod="#{cc.attrs.suggestionBean.list}"  var="var" itemValue="#{var}" 
 								itemLabel="#{cc.attrs.suggestionBean.labelForInstance(var)}"	forceSelection="true"  required="#{cc.attrs.required}" 
-								minQueryLength="#{cc.attrs.minQueryLength}" readonly="#{!cc.attrs.editable}" size="#{cc.attrs.inputSize}" styleClass="#{cc.attrs.inputStyleClass}">
+								minQueryLength="#{cc.attrs.minQueryLength}" readonly="#{!cc.attrs.editable}" size="#{cc.attrs.inputSize}" styleClass="#{cc.attrs.inputStyleClass}"
+								scrollHeight="#{cc.attrs.scrollHeight}">
 							    					
 					<n:entityConverter entity="#{cc.attrs.entity}" noSelectionValue="#{cc.attrs.noSelectionLabel}"/>
 					
