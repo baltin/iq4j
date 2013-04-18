@@ -11,7 +11,7 @@
 	<composite:interface componentType="com.iq4j.faces.composites.components.Input">
 				
 		<composite:attribute name="value" required="true"/>
-		<composite:attribute name="entity" required="true" type="java.lang.String"/>
+		<composite:attribute name="entity" type="java.lang.String"/>
 		<composite:attribute name="items" required="true" type="com.iq4j.faces.api.SelectItems"/>
 		
 		<composite:attribute name="noSelectionLabel" type="java.lang.String" />
@@ -57,7 +57,9 @@
 					
 					<p:ajax update="#{cc.attrs.updateOnChange}" process="#{cc.attrs.processOnChange}" disabled="#{!cc.attrs.ajax}" />
 					
-					<n:entityConverter entity="#{cc.attrs.entity}" noSelectionValue="#{cc.attrs.noSelectionLabel}" />
+					<c:if test="#{cc.attrs.entity ne null}">
+						<n:entityConverter entity="#{cc.attrs.entity}" noSelectionValue="#{cc.attrs.noSelectionLabel}" />
+					</c:if>
 					
 				</p:selectOneMenu>		   		
 				

@@ -17,17 +17,13 @@ public class EntityConverterHandler extends TagHandler {
 	
 	public EntityConverterHandler(TagConfig config) {
 		super(config);
-		this.entity = getAttribute("entity");
+		this.entity = getRequiredAttribute("entity");
 		this.noSelectionValue = getAttribute("noSelectionValue");
 	}
 
 	@Override
 	public void apply(FaceletContext ctx, UIComponent parent) throws IOException {
-		
-		if(entity == null || entity.getValue() == null) { // if entry attribute not setted. entityConverter would not be registered.
-			return;
-		}
-		
+
 		parent.getAttributes().put("entity", entity.getValue(ctx));
 		parent.getAttributes().put("noSelectionValue", noSelectionValue == null ? "" : noSelectionValue.getValue(ctx));
 		parent.setValueExpression("converter", new ExpressionsUtil().createValueExpression("#{entityConverter}")); 
