@@ -24,7 +24,7 @@ public class EntityConverterHandler extends TagHandler {
 	@Override
 	public void apply(FaceletContext ctx, UIComponent parent) throws IOException {
 		
-		if(entity == null) { // if entry attribute not setted. entityConverter would not be registered.
+		if(entity == null || entity.getValue() == null) { // if entry attribute not setted. entityConverter would not be registered.
 			return;
 		}
 		
