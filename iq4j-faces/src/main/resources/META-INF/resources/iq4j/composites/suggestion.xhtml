@@ -43,9 +43,18 @@
 			
 			<h:panelGroup styleClass="cmp_blck" layout="block">	  
 				
-				<p:autoComplete id="i" value="#{cc.attrs.value}" completeMethod="#{cc.attrs.suggestionBean.list}"  var="var" itemValue="#{var}" 
-								itemLabel="#{cc.attrs.suggestionBean.labelForInstance(var)}"	forceSelection="true"  required="#{cc.attrs.required}" 
-								minQueryLength="#{cc.attrs.minQueryLength}" readonly="#{!cc.attrs.editable}" size="#{cc.attrs.inputSize}" styleClass="#{cc.attrs.inputStyleClass}"
+				<p:autoComplete id="i" 
+								value="#{cc.attrs.value}" 
+								completeMethod="#{cc.attrs.suggestionBean.list}"  
+								var="var" 
+								itemValue="#{var}" 
+								itemLabel="#{cc.attrs.suggestionBean.labelForInstance(var)}"	
+								forceSelection="true"  
+								required="#{cc.attrs.required}" 
+								minQueryLength="#{cc.attrs.minQueryLength}" 
+								readonly="#{!cc.attrs.editable}" 
+								size="#{cc.attrs.inputSize}" 
+								styleClass="#{cc.attrs.inputStyleClass}"
 								scrollHeight="#{cc.attrs.scrollHeight}">
 					
 					<c:if test="#{cc.attrs.entity ne null}">
