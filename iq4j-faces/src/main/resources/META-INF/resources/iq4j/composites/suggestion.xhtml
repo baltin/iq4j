@@ -5,6 +5,7 @@
 				xmlns:pe="http://primefaces.org/ui/extensions"
 				xmlns:p="http://primefaces.org/ui"
 				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:c="http://java.sun.com/jsp/jstl/core"
 				xmlns:ui="http://java.sun.com/jsf/facelets">
 	
 	<composite:interface componentType="com.iq4j.faces.composites.components.Input">
@@ -26,7 +27,9 @@
 		<composite:attribute name="styleClass" default="cmp_input" type="java.lang.String"/>
 		<composite:attribute name="labelStyleClass" default="" type="java.lang.String"/>
 		<composite:attribute name="required" default="false" type="java.lang.Boolean"/>		
-		<composite:attribute name="showErrorMsg" default="true" type="java.lang.Boolean"/>	    
+		<composite:attribute name="showErrorMsg" default="true" type="java.lang.Boolean"/>	 
+		
+		<composite:editableValueHolder name="input" targets="i" />   
 			
 	</composite:interface>
 	
@@ -44,12 +47,14 @@
 								itemLabel="#{cc.attrs.suggestionBean.labelForInstance(var)}"	forceSelection="true"  required="#{cc.attrs.required}" 
 								minQueryLength="#{cc.attrs.minQueryLength}" readonly="#{!cc.attrs.editable}" size="#{cc.attrs.inputSize}" styleClass="#{cc.attrs.inputStyleClass}"
 								scrollHeight="#{cc.attrs.scrollHeight}">
-							    					
-					<n:entityConverter entity="#{cc.attrs.entity}" noSelectionValue="#{cc.attrs.noSelectionLabel}"/>
 					
-					<composite:insertChildren/>
+					<c:if test="#{cc.attrs.entity ne null}">
+						<n:entityConverter entity="#{cc.attrs.entity}" noSelectionValue="#{cc.attrs.noSelectionLabel}"/>		
+					</c:if>
 					
 				</p:autoComplete> 		
+			
+				<composite:insertChildren/>
 			
 			</h:panelGroup>
 			
