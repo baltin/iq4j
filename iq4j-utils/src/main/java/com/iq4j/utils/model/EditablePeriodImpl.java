@@ -11,4 +11,17 @@ public abstract class EditablePeriodImpl extends PeriodImpl implements EditableP
 		setMax(max);
 	}
 	
+	
+	
+	@Override
+	public abstract Date getMin();
+
+	@Override
+	public abstract Date getMax();
+
+	@Override
+	public abstract void setMin(Date min);
+	
+	@Override
+	public abstract void setMax(Date min);
 }
