@@ -29,7 +29,7 @@ public abstract class DataSourceImpl<T> extends ObjectListImpl<T> implements Dat
 	
 	@Override
 	public void refresh() {
-		setFilteredList(null);
+		filteredList = null;
 		super.refresh();
 	}
 	
