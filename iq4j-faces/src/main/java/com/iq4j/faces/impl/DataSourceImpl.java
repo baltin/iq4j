@@ -27,6 +27,12 @@ public abstract class DataSourceImpl<T> extends ObjectListImpl<T> implements Dat
 	// --- methods
 	protected abstract List<T> load();
 	
+	@Override
+	public void refresh() {
+		filteredList = null;
+		super.refresh();
+	}
+	
 	// --- properties
 	@Override
 	public boolean isSelected() {
