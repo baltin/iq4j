@@ -3,7 +3,10 @@ package com.iq4j.faces.impl;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import com.iq4j.faces.api.DataSource;
+import com.iq4j.faces.api.DataSourceFilteredListManager;
 import com.iq4j.utils.impl.ObjectListImpl;
 
 public abstract class DataSourceImpl<T> extends ObjectListImpl<T> implements DataSource<T>, Serializable {
@@ -11,8 +14,9 @@ public abstract class DataSourceImpl<T> extends ObjectListImpl<T> implements Dat
 	private static final long serialVersionUID = 3917145886233868937L;
 	
 	// --- fields
+	@Inject DataSourceFilteredListManager dataSourceFilteredListManager;
+	
 	private boolean selectable;
-	private List<T> filteredList;
 	private T selection;
 	
 	// --- constructors
@@ -29,7 +33,7 @@ public abstract class DataSourceImpl<T> extends ObjectListImpl<T> implements Dat
 	
 	@Override
 	public void refresh() {
-		filteredList = null;
+		dataSourceFilteredListManager.put(getClass(), null);
 		super.refresh();
 	}
 	
@@ -41,12 +45,12 @@ public abstract class DataSourceImpl<T> extends ObjectListImpl<T> implements Dat
 	
 	@Override
 	public List<T> getFilteredList() {
-		return filteredList;
+		return dataSourceFilteredListManager.get(getClass());
 	}
 
 	@Override
 	public void setFilteredList(List<T> filteredList) {
-		this.filteredList = filteredList;
+		dataSourceFilteredListManager.put(getClass(), filteredList);
 	}
 
 	@Override
