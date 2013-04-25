@@ -15,6 +15,8 @@
 .cmp_form_ok{}
 .cmp_form_cancel{}
 
+.cmp_number{text-align: right;}
+
 /*PrimeFaces DataTable Paginator classes override*/
 .ui-paginator-current {float: left;margin: 0.2em -9em 0 0 !important;}
 .ui-paginator-rpp-options {float: right;margin-left: -5em !important;margin-right: 0.2em !important;margin-top: 0.2em;}

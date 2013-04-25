@@ -9,8 +9,9 @@
 	<!-- Registers EnumConverter for all enumerations -->
 	<converter>
 		<converter-for-class>java.lang.Enum</converter-for-class>
-		<converter-class>javax.faces.convert.EnumConverter</converter-class>
+		<converter-class>org.omnifaces.converter.GenericEnumConverter</converter-class>
 	</converter>
+	
 	<application>
 		<resource-bundle>
 			<base-name>iq4j-faces</base-name>
