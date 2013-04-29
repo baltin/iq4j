@@ -55,7 +55,7 @@
 					
 					</c:if>
 					
-					<f:selectItems  value="#{cc.attrs.items.list()}" var="var" itemLabel="#{cc.attrs.items.labelForInstance(var)}" itemValue="#{var}" />
+					<f:selectItems  value="#{cc.attrs.items.list()}" var="var" itemLabel="#{cc.attrs.items.labelForInstance(var)}" itemValue="#{cc.attrs.items.valueForInstance(var)}" />
 					
 					<p:ajax update="#{cc.attrs.updateOnChange}" process="#{cc.attrs.processOnChange}" disabled="#{!cc.attrs.ajax}" />
 					

@@ -50,7 +50,7 @@
 					
 					</c:if>
 					
-					<f:selectItems value="#{cc.attrs.items.list()}" var="enum" itemValue="#{enum}" itemLabel="#{cc.attrs.items.labelForInstance(enum)}"/>
+					<f:selectItems value="#{cc.attrs.items.list()}" var="enum" itemValue="#{cc.attrs.items.valueForInstance(enum)}" itemLabel="#{cc.attrs.items.labelForInstance(enum)}"/>
 				
 					<p:ajax event="change" update="#{cc.attrs.updateOnChange}" process="#{cc.attrs.processOnChange}" disabled="#{!cc.attrs.ajax}" /> 
 				
