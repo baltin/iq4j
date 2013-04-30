@@ -1,19 +1,131 @@
-.cmp_lbl{font-weight: bold; }
-.cmp_leftlbl{min-width: 130px;}
-.cmp_toplbl, .cmp_toperr{display: block !important; width: 100%; padding: 5px 0 5px 0 !important;}
-.cmp_errmsg{color: red;padding-left:5px;}
-.cmp_errmsg li {margin-left:10px;}
-.cmp_validation {background-color:#f2dede;border-color:#eed3d7;font-size:13px;font-weight:bold;color:rgb(201, 0, 0);}
-.cmp_input{padding:3px 0px 4px 0px;}
-.cmp_sp{padding:0 5px;line-height: 28px;}
-.cmp_td{vertical-align: middle;}
-.cmp_blck{display:inline-block; vertical-align: middle;}
-.cmp_blck .ui-selectonemenu {display: block;}
-.ui-tooltip-content {color: red;}
+.cmp_blck .ui-selectonemenu {
+	display: block;
+}
 
-.cmp_form_content{}
-.cmp_form_actions{padding:10px 0 0 0 !important}
-.cmp_form_ok{}
-.cmp_form_cancel{}
+.cmp_lbl {
+	font-weight: bold; 
+}
 
-.cmp_number{text-align: right;}
+.cmp_leftlbl {
+	min-width: 130px;
+}
+
+.cmp_toplbl, .cmp_toperr {
+	display: block !important; 
+	width: 100%; 
+	padding: 5px 0 5px 0 !important;
+}
+
+.cmp_errmsg {
+	color: red;
+	padding-left: 5px;
+}
+
+.cmp_errmsg li {
+	margin-left:10px;
+}
+
+.cmp_validation {
+	background-color: #f2dede;
+	border-color: #eed3d7;
+	font-size: 13px;
+	font-weight: bold;
+	color: rgb(201, 0, 0);
+}
+
+.cmp_input {
+	padding:3px 0px 4px 0px;
+}
+
+.cmp_sp {
+	padding: 0 5px;
+	line-height: 28px;
+}
+
+.cmp_td {
+	vertical-align: middle;
+}
+
+.cmp_blck { 
+	display: inline-block; 
+	vertical-align: middle;
+}
+
+.cmp_form_actions{ 
+	padding:10px 0 0 0 !important
+}
+
+.cmp_number {
+	text-align: right;
+}
+
+/* Form */
+.cmp_form_ok {
+	color: #ffffff !important;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !important;
+	background-color: #006dcc !important;
+	*background-color: #0044cc !important;
+	background-image: -moz-linear-gradient(top, #0088cc, #0044cc) !important;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc)) !important;
+	background-image: -webkit-linear-gradient(top, #0088cc, #0044cc) !important;
+	background-image: -o-linear-gradient(top, #0088cc, #0044cc) !important;
+	background-image: linear-gradient(to bottom, #0088cc, #0044cc) !important;
+	background-repeat: repeat-x !important;
+	border-color: #0044cc #0044cc #002a80 !important; 
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false) !important;
+}
+
+.cmp_form_ok:hover,
+.cmp_form_ok:focus,
+.cmp_form_ok:active,
+.cmp_form_ok[disabled] {
+	color: #ffffff !important;
+	background-color: #0044cc !important;
+	*background-color: #003bb3 !important;
+}
+
+.cmp_form_ok:active {
+	background-color: #003399 \9 !important;
+}
+
+.cmp_form_cancel {
+	color: #ffffff !important;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !important;
+	background-color: #da4f49 !important;
+	*background-color: #bd362f !important;
+	background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f) !important;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f)) !important;
+	background-image: -webkit-linear-gradient(top, #ee5f5b, #bd362f) !important;
+	background-image: -o-linear-gradient(top, #ee5f5b, #bd362f) !important;
+	background-image: linear-gradient(to bottom, #ee5f5b, #bd362f) !important;
+	background-repeat: repeat-x !important;
+	border-color: #bd362f #bd362f #802420 !important;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false) !important;
+}
+
+.cmp_form_cancel:hover,
+.cmp_form_cancel:focus,
+.cmp_form_cancel:active {
+	color: #ffffff !important;
+	background-color: #bd362f !important;
+	*background-color: #a9302a !important;
+}
+
+.cmp_form_cancel:active {
+	background-color: #942a25 \9 !important;
+}
+
+.cmp_confirm_div span {
+	float: left;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.cmp_confirm_div img {
+	float: left;
+	margin-left: 5px;
+}

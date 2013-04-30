@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:iqc="http://java.sun.com/jsf/composite/iq4j/composites"
+	  xmlns:composite="http://java.sun.com/jsf/composite">
+
+	<composite:interface>
+	
+		<composite:attribute name="id" type="java.lang.String" default="cnfrm" />
+		<composite:attribute name="actionMethod" required="true" method-signature="java.lang.String action()" />
+		<composite:attribute name="headerText" default="Confirm" type="java.lang.String" />
+		<composite:attribute name="confirmButtonText" default="Yes" type="java.lang.String" />
+		<composite:attribute name="showButtonText" default="Show" type="java.lang.String" />
+		<composite:attribute name="cancelButtonText" default="No" type="java.lang.String"/>
+		<composite:attribute name="widgetWar" default="confirm_" type="java.lang.String"/>
+		<composite:attribute name="update" default="@form" type="java.lang.String" />
+		<composite:attribute name="messageType" default="default" type="java.lang.String" shortDescription="Possible values are 'default', 'delete'" />
+
+	</composite:interface>
+
+	<composite:implementation>
+
+		<p:dialog id="#{cc.attrs.id}" 
+		          header="#{cc.attrs.headerText}" 
+		          severity="alert" 
+		          widgetVar="#{cc.attrs.widgetWar}" 
+		          closable="false" 
+		          modal="true" 
+		          width="450" 
+		          resizable="false">
+
+			<div class="cmp_confirm_div" >
+
+				<h:graphicImage value="/resources/gfx/warning.png" />
+				
+				<span>
+					<h:outputText value="#{confirmMessages.get(cc.attrs.messageType)}" />
+				</span>
+
+			</div>
+
+			<br/>
+			
+			<p:spacer height="25px" />
+
+			<p:separator />
+
+			<p:commandButton id="#{cc.attrs.id}_confirm"
+							 action="#{cc.attrs.actionMethod}"  
+							 value="#{cc.attrs.confirmButtonText}" 
+							 update="#{cc.attrs.update}" 
+							 oncomplete="#{cc.attrs.widgetWar}.hide();" 
+							 styleClass="cmp_form_ok left" 
+							 partialSubmit="true" 
+							 process="@this"
+							 icon="icon-ok"/>
+
+			<p:commandButton id="#{cc.attrs.id}_cancel" 
+							 type="button" 
+							 onclick="#{cc.attrs.widgetWar}.hide()" 
+							 value="#{cc.attrs.cancelButtonText}" 
+							 styleClass="cmp_form_cancel right" 
+							 icon="icon-cancel"/>
+
+			<div class="clear" />
+		</p:dialog>
+
+		<composite:insertChildren />
+
+	</composite:implementation>
+</ui:composition>
