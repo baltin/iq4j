@@ -3,6 +3,7 @@
 .cmp_toplbl, .cmp_toperr{display: block !important; width: 100%; padding: 5px 0 5px 0 !important;}
 .cmp_errmsg{color: red;padding-left:5px;}
 .cmp_errmsg li {margin-left:10px;}
+.cmp_validation {background-color:#f2dede;border-color:#eed3d7;font-size:13px;font-weight:bold;color:rgb(201, 0, 0);}
 .cmp_input{padding:3px 0px 4px 0px;}
 .cmp_sp{padding:0 5px;line-height: 28px;}
 .cmp_td{vertical-align: middle;}
@@ -16,8 +17,3 @@
 .cmp_form_cancel{}
 
 .cmp_number{text-align: right;}
-
-/*PrimeFaces DataTable Paginator classes override*/
-.ui-paginator-current {float: left;margin: 0.2em -9em 0 0 !important;}
-.ui-paginator-rpp-options {float: right;margin-left: -5em !important;margin-right: 0.2em !important;margin-top: 0.2em;}
-

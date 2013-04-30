@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:iqc="http://java.sun.com/jsf/composite/iq4j/composites"
+	  xmlns:composite="http://java.sun.com/jsf/composite">
+
+	<!-- INTERFACE -->
+	<composite:interface>
+		<composite:attribute name="group" type="java.lang.String" />
+		<composite:attribute name="styleClass" default="cmp_input" type="java.lang.String" />		
+	</composite:interface>
+	
+	<!-- IMPLEMENTATION -->
+	<composite:implementation>
+		<h:panelGroup layout="block" styleClass="#{cc.attrs.styleClass} cmp_errmsg cmp_validation" rendered="#{validation.hasErrorsForGroup(cc.attrs.group)}">
+			<li>
+				<ui:repeat var="msg" value="#{validation.errorsForGroup(cc.attrs.group)}">
+					<ul class="cmp_errmsg"> 
+						<h:outputText value="#{msg}"  />
+					</ul>
+				</ui:repeat>
+			</li>
+		</h:panelGroup>
+	</composite:implementation>
+	
+</ui:composition>

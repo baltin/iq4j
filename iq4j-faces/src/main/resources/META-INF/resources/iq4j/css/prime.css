@@ -1,27 +1,79 @@
-.ui-widget-content .ui-state-highlight{background: #0073EA; color: white;}
-
-
-/*  .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{border:1px solid #cccccc;background:#ffffff url("#{resource['primefaces-flick:images/ui-bg_flat_55_ffffff_40x100.png']}") 50% 50% repeat-x !important;color:#444444;}
-*/
-
-.ui-dialog .ui-dialog-buttonpane {padding-right: 0 !important;}
-
-.ui-menubar .ui-menuitem-link .ui-menuitem-icon { width:24px; height: 24px; } 
-.mainMenu .ui-button-icon-only .ui-icon, 
-.ui-menubar .ui-button-text-icon-left .ui-icon, 
-.ui-menubar .ui-button-text-icon-right .ui-icon  { width:24px; height: 24px; margin-top: -11px !important;}
-
-.ui-menubutton .ui-button-text-icon-left .ui-icon  { width:16px; height: 16px; margin-top:-8px !important;}
-.ui-menubar .ui-menuitem-link {line-height: 24px !important;}
-
-.ui-menubar { background: none; border:none;}
-.ui-menubar > .ui-menu-list > .ui-menuitem > .ui-menuitem-link span.ui-icon-triangle-1-e, .ui-menubar > .ui-menu-list > .ui-menuitem > .ui-menuitem-link span.ui-icon-triangle-1-s {
-    margin-top: 3px; 
+.ui-widget {
+	font-size: 12px !important;
 }
 
-.ui-menubar .ui-menuitem-link {border: none !important; padding:0 10px 0 0 !important;}
-.ui-menu {padding:0 !important;}
+.ui-menu .ui-menu-list .ui-menuitem {
+	margin-right: 7px;
+}
 
-.ui-panel {padding-top : 5px;}
+.ui-menu.ui-widget li.ui-corner-all, .ui-menu.ui-widget a.ui-corner-all {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
 
-.ui-selectmanycheckbox label, .ui-selectoneradio label { margin-top: -4px !important;}
+.ui-menu.ui-widget .ui-menuitem-link .ui-menuitem-text {
+	margin-right: 3px;
+}
+
+.ui-inputtext {
+	cursor: text !important;
+}
+
+.ui-inputtextarea {
+	cursor: text !important;
+}
+
+.ui-autocomplete-input {
+	cursor: text !important;
+}
+
+.ui-state-focus {
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6) !important;
+	outline: none !important;
+}
+
+.ui-chkbox .ui-chkbox-label {
+	margin: 2px 5px !important;
+}
+
+.ui-dialog.ui-widget-content .ui-dialog-titlebar {
+	padding: 3px 15px !important;
+}
+
+.ui-button-icon-only .ui-icon, .ui-button-text-icon-left .ui-icon, .ui-button-text-icon-right .ui-icon {
+	margin-top: -9px !important;
+}
+
+.ui-tabs .ui-tabs-panel {
+	padding: 1em 0.4em !important;
+}
+
+.ui-selectmanycheckbox label, .ui-selectoneradio label {
+	margin-top: 0 !important;
+	margin-left: 3px !important;
+}
+
+.ui-panelgrid td {
+	vertical-align: top;
+}
+
+.ui-column-filter {
+	width: 70% !important;
+}
+
+select.ui-column-filter {
+	width: auto !important;
+}
+
+.ui-paginator-current {
+	float: left;
+	margin: 0.2em -9em 0 0 !important;
+}
+
+.ui-paginator-rpp-options {
+	float: right;
+	margin-left: -5em !important;
+	margin-right: 0.2em !important;
+	margin-top: 0.2em;
+}
