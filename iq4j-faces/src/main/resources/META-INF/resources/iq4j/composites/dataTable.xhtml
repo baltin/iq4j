@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:p="http://primefaces.org/ui"
+				xmlns:c="http://java.sun.com/jsp/jstl/core"
+				xmlns:composite="http://java.sun.com/jsf/composite">
+
+<!-- INTERFACE -->
+<composite:interface>
+	
+	<composite:attribute name="dataSource" required="true" type="com.iq4j.faces.api.DataSource" />
+	<composite:attribute name="tableWidgetVar" default="dt_" type="java.lang.String" />		
+
+</composite:interface>
+
+<!-- IMPLEMENTATION -->
+<composite:implementation>
+
+			<p:dataTable id="dt"
+						 widgetVar="#{cc.attrs.tableWidgetVar}" 
+						 var="var"
+						 value="#{cc.attrs.dataSource.list}" 
+						  
+						 rows="15" 
+						 paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks}  {NextPageLink} {LastPageLink} {CurrentPageReport} {RowsPerPageDropdown}"
+						 currentPageReportTemplate="{totalRecords} Record(s) "
+				         rowsPerPageTemplate="15,25,50,100" 
+						 
+						 selectionMode="single"
+						 rowKey="#{var.id}"
+						 
+						 filterEvent="enter" 
+						 filteredValue="#{cc.attrs.dataSource.filteredList}"
+						 
+						 paginator="true" 
+				         paginatorAlwaysVisible="false" >  
+				     
+				         
+					<c:if test="#{cc.attrs.dataSource.selectable}">
+						<f:attribute name="selection" value="#{cc.attrs.dataSource.selection}"/>
+					</c:if>
+					
+					<composite:insertChildren />
+			  
+		    </p:dataTable> 
+			    
+</composite:implementation>
+
+</ui:composition>
