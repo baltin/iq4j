@@ -12,7 +12,7 @@
 		
 		<composite:attribute name="value" required="true"/>
 		<composite:attribute name="entity" required="true" type="java.lang.String"/>		
-		<composite:attribute name="suggestionBean" required="true" type="com.iq4j.faces.api.Suggestion"/>			
+		<composite:attribute name="suggestionItems" required="true" type="com.iq4j.faces.api.Suggestion"/>			
 		<composite:attribute name="minQueryLength" default="1" required="true" type="java.lang.Integer"/>		
 		<composite:attribute name="inputSize" default="20" type="java.lang.Integer" />
 		
@@ -45,10 +45,10 @@
 				
 				<p:autoComplete id="i" 
 								value="#{cc.attrs.value}" 
-								completeMethod="#{cc.attrs.suggestionBean.list}"  
+								completeMethod="#{cc.attrs.suggestionItems.list}"  
 								var="var" 
 								itemValue="#{var}" 
-								itemLabel="#{cc.attrs.suggestionBean.labelForInstance(var)}"	
+								itemLabel="#{cc.attrs.suggestionItems.labelForInstance(var)}"	
 								forceSelection="true"  
 								required="#{cc.attrs.required}" 
 								minQueryLength="#{cc.attrs.minQueryLength}" 
