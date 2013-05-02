@@ -5,7 +5,6 @@ import javax.faces.component.UIComponent;
 import javax.faces.component.UIInput;
 import javax.faces.context.FacesContext;
 import javax.faces.validator.FacesValidator;
-import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 import com.iq4j.faces.composites.CompositeHelper;
@@ -14,7 +13,7 @@ import com.iq4j.faces.composites.components.Input;
 
 @Model
 @FacesValidator(value="integerRangeInputValidator")
-public class IntegerRangeInputValidator extends AbstractValidator implements Validator {
+public class IntegerRangeInputValidator extends AbstractValidator {
 	
 	
 	@Override
