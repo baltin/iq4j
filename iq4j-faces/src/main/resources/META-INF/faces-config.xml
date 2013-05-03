@@ -9,8 +9,12 @@
 	<!-- Registers EnumConverter for all enumerations -->
 	<converter>
 		<converter-for-class>java.lang.Enum</converter-for-class>
-		<converter-class>org.omnifaces.converter.GenericEnumConverter</converter-class>
+		<converter-class>javax.faces.convert.EnumConverter</converter-class>
 	</converter>
+	
+	<lifecycle>
+   		<phase-listener>org.omnifaces.eventlistener.ResetInputAjaxActionListener</phase-listener>
+ 	</lifecycle>
 	
 	<application>
 		<resource-bundle>
