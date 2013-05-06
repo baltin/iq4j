@@ -65,7 +65,7 @@ table {
 }
 
 .fullWidth {
-	width: 100%;
+	width: 100% !important;
 }
 
 .autoWidth {
@@ -73,7 +73,7 @@ table {
 }
 
 .w50y {
-	width: 50%;
+	width: 50% !important;
 }
 
 .clear {
