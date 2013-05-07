@@ -33,7 +33,7 @@ public class Redirect {
 	}
 
 	public static void to(String viewId) {
-		Redirect.instance(viewId).facesRedirect().to();
+		Redirect.instance(viewId).to();
 	}
 	
 	public static String outcome(String viewId) {
