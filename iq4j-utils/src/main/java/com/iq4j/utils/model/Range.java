@@ -22,5 +22,7 @@ public interface Range<T> extends Serializable{
 
 	public boolean contains(T value);
 	
+	public Range<T> copy();
+	
 
 }
