@@ -8,4 +8,5 @@ public abstract class EditableRangeImpl<T extends Comparable<T>> extends RangeIm
 		setMin(min);
 		setMax(max);
 	}
+	
 }
