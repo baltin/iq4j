@@ -8,13 +8,13 @@
 
 	<composite:interface>
 	
-		<composite:attribute name="id" type="java.lang.String" default="cnfrm" />
+		<composite:attribute name="dialogId" type="java.lang.String" default="confirm" />
 		<composite:attribute name="actionMethod" required="true" method-signature="java.lang.String action()" />
 		<composite:attribute name="headerText" default="Confirm" type="java.lang.String" />
 		<composite:attribute name="confirmButtonText" default="Yes" type="java.lang.String" />
 		<composite:attribute name="showButtonText" default="Show" type="java.lang.String" />
 		<composite:attribute name="cancelButtonText" default="No" type="java.lang.String"/>
-		<composite:attribute name="widgetWar" default="confirm_" type="java.lang.String"/>
+		<composite:attribute name="widgetWar" default="#{cc.attrs.dialogId}_" type="java.lang.String"/>
 		<composite:attribute name="update" default="@form" type="java.lang.String" />
 		<composite:attribute name="messageType" default="default" type="java.lang.String" shortDescription="Possible values are 'default', 'delete'" />
 
@@ -22,7 +22,7 @@
 
 	<composite:implementation>
 
-		<p:dialog id="#{cc.attrs.id}" 
+		<p:dialog id="#{cc.attrs.dialogId}" 
 		          header="#{cc.attrs.headerText}" 
 		          severity="alert" 
 		          widgetVar="#{cc.attrs.widgetWar}" 
