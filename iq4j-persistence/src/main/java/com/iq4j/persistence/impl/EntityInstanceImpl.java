@@ -70,7 +70,7 @@ public class EntityInstanceImpl<E extends Entity<ID>, ID extends Serializable> e
 
 	@Override
 	public void setId(ID id) {
-		setInstance(find(id));
+		setInstance(load(id));
 	}
 
 	// --- Utility methods
@@ -96,7 +96,7 @@ public class EntityInstanceImpl<E extends Entity<ID>, ID extends Serializable> e
 		}
 	}
 
-	protected E find(ID id) {
+	protected E load(ID id) {
 		//TODO throw custom exception for null id parameter	
 		E result = getEntityManager().find(getEntityClass(), id);
 
