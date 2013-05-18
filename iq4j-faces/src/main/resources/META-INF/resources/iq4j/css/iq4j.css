@@ -33,23 +33,23 @@ table {
 
 /**************** Common Classes ****************/
 .right {
-	float:right;
+	float:right !important;
 }
 
 .left  {
-	float:left;
+	float:left !important;
 }
 
 .taleft {
-	text-align:left;
+	text-align:left !important;
 }
 
 .taright {
-	text-align:right;
+	text-align:right !important;
 }
 
 .tacenter {
-	text-align:center;
+	text-align:center !important;
 }
 
 .vatop {
@@ -61,11 +61,11 @@ table {
 }
 
 .bold {
-	font-weight: bold;
+	font-weight: bold !important;
 }
 
 .fullWidth {
-	width: 100%;
+	width: 100% !important;
 }
 
 .autoWidth {
@@ -73,7 +73,7 @@ table {
 }
 
 .w50y {
-	width: 50%;
+	width: 50% !important;
 }
 
 .clear {
