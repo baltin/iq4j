@@ -150,10 +150,10 @@
 		<attribute>
 			<description> 
 				<![CDATA[
-					<p>Cancel button outcome ( <b> default : 'cancel' </b> ) </p>
+					<p>Cancel button action ( <b> default : null </b> ) </p>
 				]]>
 			</description>
-			<name>cancelOutcome</name>
+			<name>cancelAction</name>
 		</attribute>
 
 		<attribute>
@@ -163,6 +163,11 @@
 
 		<attribute>
 			<name>updateOnSuccess</name>
+			<type>java.lang.String</type>
+		</attribute>
+
+		<attribute>
+			<name>updateOnCancel</name>
 			<type>java.lang.String</type>
 		</attribute>
 

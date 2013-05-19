@@ -13,13 +13,14 @@
 	<n:default var="id" value="f"/>      	 	 
 	<n:default var="rendered" value="true"/>      	 	 
 	<n:default var="dialog" value="false"/>
-	<n:default var="cancelOutcome" value="cancel"/>
+	
 	<n:default var="header" value=""/>	 
 	<n:default var="showHeader" value="#{header ne ''}"/>
 	<n:default var="updateOnSuccess" value=""/>
+	<n:default var="updateOnCancel" value="@none"/>
 	 	
 	<o:methodParam name="action1" value="#{saveAction}" />
-	<o:methodParam name="action2" value="#{cancelOutcome}" />
+	<o:methodParam name="action2" value="#{cancelAction}" />
 	 
 	<o:form id="#{id}" rendered="#{rendered}">
 		
@@ -71,6 +72,7 @@
 									 process="@this"
 									 icon="icon-cancel" 
 									 partialSubmit="true"
+									 update="#{updateOnCancel}"
 									 action="#{action2}">
 						
 						<n:closeDialog enabled="#{dialog}" />
