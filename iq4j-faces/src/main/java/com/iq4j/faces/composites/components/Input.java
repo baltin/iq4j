@@ -60,6 +60,16 @@ public class Input extends UIComponentBase implements NamingContainer {
 		
 	}
 	
+	protected UIInput findInput(String name) {
+		UIComponent compositeFacet = getFacet(UIComponent.COMPOSITE_FACET_NAME);
+		UIComponent inputComponent = compositeFacet.findComponent(name);
+		if(inputComponent instanceof UIInput) {
+			return (UIInput)inputComponent;
+		} else {
+			return null;
+		}
+	}
+	
 	private void findUIInputs(){
 		findUIInputs(getFacet(UIComponent.COMPOSITE_FACET_NAME));
 	}
