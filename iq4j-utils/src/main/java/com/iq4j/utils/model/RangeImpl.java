@@ -88,32 +88,23 @@ public abstract class RangeImpl<T extends Comparable<T>> implements Range<T> {
 	
 	public boolean equals(Object o) {
 		
-		if (this == o)
-			return true;
-		
-		if (o == null)
-			return false;
-		
-		if (!(o instanceof Period))
-			return false;
+		if (this == o) return true;
+		if (o == null) return false;
+		if (!(o instanceof Period)) return false;
 		
 		Period other = (Period)o;
 		
 		if(getMin() == null  ) {
-			if(other.getMin() != null)
-				return false;
-		}
-		
-		if(!getMin().equals(other.getMin()))
+			if(other.getMin() != null) return false;
+		} else if(!getMin().equals(other.getMin())) {			
 			return false;
+		}
 		
 		if(getMax() == null  ) {
-			if(other.getMax() != null)
-				return false;
-		}
-		
-		if(!getMax().equals(other.getMax()))
+			if(other.getMax() != null) return false;
+		} else if(!getMax().equals(other.getMax())) {
 			return false;
+		}
 		
 		return true;
 		
