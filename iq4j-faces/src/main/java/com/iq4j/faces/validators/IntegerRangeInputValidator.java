@@ -34,23 +34,23 @@ public class IntegerRangeInputValidator extends AbstractValidator {
 				int compareResult = minValue.compareTo(maxValue);
 				
 				if(compareResult == 1){
-					throwValidatorException("Minimum value can not be grater than maximum..", integerRangeInput);
+					throwValidatorException("reverse range", integerRangeInput);
 				}
 				else if( compareResult == 0 ){				
 					if(!CompositeHelper.getBooleanValue(integerRangeInput, "allowEquality")){
-						throwValidatorException("Minimum may not be equal maximum..", integerRangeInput);
+						throwValidatorException("values may not be equal", integerRangeInput);
 					}
 				} 	
 			}		
 			else if( (minValue != null) ^ (maxValue != null) )
 			{
-				throwValidatorException( "Invalid value", integerRangeInput );
+				throwValidatorException( "Invalid range", integerRangeInput );
 			}
 			
 		}
 		else
 		{
-			throwValidatorException("Invalid value", integerRangeInput);			
+			throwValidatorException("Invalid range", integerRangeInput);			
 		}
 		
 	}
