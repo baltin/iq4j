@@ -14,6 +14,8 @@
 		<composite:attribute name="allowEquality" type="java.lang.Boolean" default="false" />
 		<composite:attribute name="divider" type="java.lang.String" default=" ~ " />
 		
+		<composite:attribute name="ajax" type="java.lang.Boolean" default="false" />
+
 		<composite:attribute name="labelPosition" default="left" type="java.lang.String" shortDescription="Label position : top or left. default is left"/>
 		<composite:attribute name="label" default="" type="java.lang.String" />	
 		<composite:attribute name="valid" default="true" type="java.lang.Boolean" />
@@ -46,7 +48,9 @@
 							size="10"				
 							value="#{cc.attrs.value.min}" 
 							required="#{cc.attrs.required}"
-							label="Start Date" />
+							label="Start Date" >
+						<p:ajax partialSubmit="true" disabled="#{!cc.attrs.ajax}" update="@none" process="@this"/>	
+				</p:calendar>
 							
 				<pe:tooltip for="min"/>
 				
@@ -58,7 +62,9 @@
 							size="10"
 							value="#{cc.attrs.value.max}" 
 							required="#{cc.attrs.required}"
-							label="End Date"/>
+							label="End Date">
+						<p:ajax partialSubmit="true" disabled="#{!cc.attrs.ajax}" update="@none" process="@this"/>	
+				</p:calendar>			
 							
 				<pe:tooltip for="max"/>
 				
