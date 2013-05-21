@@ -49,7 +49,7 @@
 							value="#{cc.attrs.value.min}" 
 							required="#{cc.attrs.required}"
 							label="Start Date" >
-						<p:ajax partialSubmit="true" disabled="#{!cc.attrs.ajax}" update="@none" process="@this"/>	
+						<p:ajax event="dateSelect" partialSubmit="true" disabled="#{!cc.attrs.ajax}" update="@none" process="@this"/>	
 				</p:calendar>
 							
 				<pe:tooltip for="min"/>
@@ -63,7 +63,7 @@
 							value="#{cc.attrs.value.max}" 
 							required="#{cc.attrs.required}"
 							label="End Date">
-						<p:ajax partialSubmit="true" disabled="#{!cc.attrs.ajax}" update="@none" process="@this"/>	
+						<p:ajax event="dateSelect" partialSubmit="true" disabled="#{!cc.attrs.ajax}" update="@none" process="@this"/>	
 				</p:calendar>			
 							
 				<pe:tooltip for="max"/>
