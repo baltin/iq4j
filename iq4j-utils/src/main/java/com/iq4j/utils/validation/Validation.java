@@ -22,11 +22,17 @@ public class Validation {
 
 	protected <T> void put(String group, ConstraintViolation<T> constraintViolation) {
 		List<String> errors = errorsMap.get(group);
+		
 		if (errors == null) {
 			errors = new ArrayList<String>();
 			errorsMap.put(group, errors);
 		}
-		errors.add(constraintViolation.getMessage());
+		
+		String property = constraintViolation.getPropertyPath() != null 
+								? constraintViolation.getPropertyPath().toString()
+							    : "";
+							
+		errors.add(property + " " + constraintViolation.getMessage());
 	}
 
 	public List<String> getGroups() {
