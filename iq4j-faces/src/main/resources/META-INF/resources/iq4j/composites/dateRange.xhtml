@@ -45,7 +45,8 @@
 				<p:calendar id="min" 
 							pattern="#{dateFormat.value}"
 							navigator="true" 
-							size="10"				
+							size="10"
+							styleClass="cmp_dr_cal"			
 							value="#{cc.attrs.value.min}" 
 							required="#{cc.attrs.required}"
 							label="Start Date" >
@@ -60,6 +61,7 @@
 							pattern="#{dateFormat.value}"
 							navigator="true" 
 							size="10"
+							styleClass="cmp_dr_cal"
 							value="#{cc.attrs.value.max}" 
 							required="#{cc.attrs.required}"
 							label="End Date">
