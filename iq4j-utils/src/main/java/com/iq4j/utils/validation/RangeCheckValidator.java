@@ -29,7 +29,7 @@ public class RangeCheckValidator implements	ConstraintValidator<RangeCheck, Rang
 		}
 		else {
 			
-			if(value != null) {
+			if(value != null && !value.isEmpty()) {
 				
 				if(!allowEquality && value.isMinEqualsMax())	
 				{
