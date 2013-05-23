@@ -16,14 +16,14 @@
 		<composite:attribute name="items" required="true" type="com.iq4j.faces.api.SelectItems" />
 		
 		<composite:attribute name="layout" type="java.lang.String" default="pageDirection"/>
+	
+		<composite:attribute name="checkAll" type="java.lang.Boolean" default="false"/>
 		
 		<composite:attribute name="ajax" default="false" type="java.lang.Boolean"/>
 		<composite:attribute name="updateOnChange" default="@none" type="java.lang.String" />
 		<composite:attribute name="processOnChange" default="@this" type="java.lang.String"  />
 		<composite:attribute name="partialSubmit" default="true" type="java.lang.Boolean"  />
 		
-		
-
 		<composite:attribute name="labelPosition" default="left" type="java.lang.String" shortDescription="Label position : top or left. default is left"/>
 		<composite:attribute name="label" default="" type="java.lang.String" />	
 		<composite:attribute name="editable" default="false" type="java.lang.Boolean" />
@@ -41,16 +41,21 @@
 	</composite:interface>
 	
 	<composite:implementation xmlns:n="http://iq4j.com/ui">
-		
-		<h:panelGroup id="ctx" layout="block" styleClass="#{cc.attrs.styleClass}" >
+	
+		<h:outputScript library="iq4j" name="js/selectManyCheckBox.js" />
+	
+		<h:panelGroup id="ctx" layout="block" styleClass="#{cc.attrs.styleClass} cmp_smc_gr" >
 			
-			<h:outputLabel id="lbl" value="#{cc.attrs.label}" rendered="#{cc.attrs.showLabel}" styleClass="cmp_blck cmp_lbl cmp_#{cc.attrs.labelPosition}lbl #{cc.attrs.labelStyleClass}" />
-						   
+			<h:panelGroup styleClass="cmp_smc_lbl cmp_blck cmp_lbl cmp_#{cc.attrs.labelPosition}lbl #{cc.attrs.labelStyleClass}" rendered="#{cc.attrs.showLabel}">
+				<h:outputLabel id="lbl" value="#{cc.attrs.label}" />
+				<p:selectBooleanCheckbox styleClass="left cmp_smc_ca" rendered="#{cc.attrs.checkAll}" onchange="checkAll(this)" />
+			</h:panelGroup>
+			
 			<h:outputText id="sp" value=":" styleClass="cmp_sp cmp_blck"/>
 			
 			<h:panelGroup styleClass="cmp_blck" layout="block">
 				
-				<p:selectManyCheckbox id="i" value="#{cc.attrs.value}" styleClass="#{cc.attrs.inputStyleClass}" editable="#{cc.attrs.editable}" style="#{cc.attrs.inputStyle}" layout="#{cc.attrs.layout}">				
+				<p:selectManyCheckbox id="i" value="#{cc.attrs.value}" styleClass="#{cc.attrs.inputStyleClass}" editable="#{cc.attrs.editable}" style="#{cc.attrs.inputStyle}" layout="#{cc.attrs.layout}" widgetVar="smc">				
 					
 					<f:selectItems  value="#{cc.attrs.items.list()}" var="var" itemLabel="#{cc.attrs.items.labelForInstance(var)}" itemValue="#{cc.attrs.items.valueForInstance(var)}" />
 					
