@@ -22,7 +22,8 @@
 }
 
 .cmp_errmsg li {
-	margin-left:10px;
+	margin-left: 10px;
+	list-style: none;
 }
 
 .cmp_validation {
@@ -34,7 +35,7 @@
 }
 
 .cmp_input {
-	padding:3px 0px 4px 0px;
+	padding: 3px 0px 4px 0px;
 }
 
 .cmp_sp {
@@ -52,7 +53,7 @@
 }
 
 .cmp_form_actions{ 
-	padding:10px 0 0 0 !important
+	padding: 10px 0 0 0 !important
 }
 
 .cmp_number {
@@ -116,7 +117,7 @@
 }
 
 .cmp_form_cancel:active {
-	background-color: #942a25 \9 !important;
+	background-color: #942a25 !important;
 }
 
 .cmp_confirm_div span {
