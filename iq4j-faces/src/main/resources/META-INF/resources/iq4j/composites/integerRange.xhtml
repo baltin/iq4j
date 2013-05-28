@@ -52,7 +52,7 @@
 								  required="#{cc.attrs.required}"
 								  size="1"
 								  title="Minimum Value"
-								  styleClass="cmp_number">
+								  styleClass="taright">
 								  
 						<p:ajax process="@this" disabled="#{!cc.attrs.immediateProcess}"/>		  
 					
@@ -71,7 +71,7 @@
 								  required="#{cc.attrs.required}" 
 								  size="1" 
 								  title="Maximum value" 
-								  styleClass="cmp_number">
+								  styleClass="taright">
 						
 						<p:ajax process="@this" disabled="#{!cc.attrs.immediateProcess}"/>	
 							  
@@ -83,7 +83,6 @@
 						<f:validator  validatorId="#{cc.attrs.validatorId}" />
 					</h:inputHidden>
 								  			   				
-			
 			</h:panelGroup>
 			
 			<h:message id="msg" 
@@ -94,6 +93,9 @@
 			<pe:tooltip for="#{cc.id}" rendered="#{!cc.attrs.showErrorMsg}" id="tt" position="left center" targetPosition="right center" />
 				
 		</h:panelGroup>
+		
+		<pe:keyFilter for="min" mask="num"/>
+		<pe:keyFilter for="max" mask="num"/>
 	
 	</composite:implementation>
 	
