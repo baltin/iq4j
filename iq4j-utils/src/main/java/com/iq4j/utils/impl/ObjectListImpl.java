@@ -23,6 +23,11 @@ public abstract class ObjectListImpl<T> implements ObjectList<T> {
 		list = null;
 	}
 	
+	@Override
+	public boolean isEmptyData() {
+		return getList() == null || getList().isEmpty();
+	}
+	
 	protected abstract List<T> load();
 
 }
