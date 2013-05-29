@@ -41,7 +41,7 @@
 				
 	</composite:interface>
 	
-	<composite:implementation xmlns:n="http://iq4j.com/ui">
+	<composite:implementation xmlns:iq="http://iq4j.com/ui">
 
 		<h:outputScript library="iq4j" name="js/selectManyCheckBox.js" target="head" />
 	
@@ -66,7 +66,7 @@
 					
 						<c:when test="#{cc.attrs.converterType eq 'entity'}">
 							<c:if test="#{cc.attrs.entity ne null}">
-								<n:entityConverter entity="#{cc.attrs.entity}" />
+								<iq:entityConverter entity="#{cc.attrs.entity}" />
 							</c:if>
 						</c:when>
 						

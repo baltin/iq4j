@@ -23,8 +23,6 @@
 		<composite:attribute name="processOnChange" default="@this" type="java.lang.String"  />
 		<composite:attribute name="partialSubmit" default="true" type="java.lang.Boolean"  />
 		
-
-
 		<composite:attribute name="labelPosition" default="left" type="java.lang.String" shortDescription="Label position : top or left. default is left"/>
 		<composite:attribute name="label" default="" type="java.lang.String" />	
 		<composite:attribute name="editable" default="true" type="java.lang.Boolean" />
@@ -40,7 +38,7 @@
 			
 	</composite:interface>
 	
-	<composite:implementation xmlns:n="http://iq4j.com/ui">
+	<composite:implementation xmlns:iq="http://iq4j.com/ui">
 		
 		<h:panelGroup id="ctx" layout="block" styleClass="#{cc.attrs.styleClass}">
 			
@@ -67,7 +65,7 @@
 					<p:ajax event="itemSelect" update="#{cc.attrs.updateOnChange}" process="#{cc.attrs.processOnChange}" disabled="#{!cc.attrs.ajax}" partialSubmit="#{cc.attrs.partialSubmit}"/>
 					
 					<c:if test="#{cc.attrs.entity ne null}">
-						<n:entityConverter entity="#{cc.attrs.entity}" noSelectionValue="#{cc.attrs.noSelectionLabel}"/>		
+						<iq:entityConverter entity="#{cc.attrs.entity}" noSelectionValue="#{cc.attrs.noSelectionLabel}"/>		
 					</c:if>
 					
 				</p:autoComplete> 		
