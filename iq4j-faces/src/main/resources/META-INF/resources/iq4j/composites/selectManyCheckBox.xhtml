@@ -10,7 +10,7 @@
 	
 	<composite:interface componentType="com.iq4j.faces.composites.components.SelectMany">
 				
-		<composite:attribute name="value" required="true" />
+		<composite:attribute name="value" required="true" type="java.util.List"/>
 		<composite:attribute name="entity" type="java.lang.String" shortDescription="Entity name for conversion. It is required when converterType value is 'entity' "/>
 		<composite:attribute name="converterType" type="java.lang.String" default="none" required="true" shortDescription="available values are &lt;b&gt;none|entity|enum&lt;/b&gt;. default : &lt;b&gt; 'none' &lt;/b&gt;"/>
 		<composite:attribute name="items" required="true" type="com.iq4j.faces.api.SelectItems" />
