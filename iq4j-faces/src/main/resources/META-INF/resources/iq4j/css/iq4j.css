@@ -83,3 +83,47 @@ table {
 .mw200 {
 	min-width: 200px !important;
 }
+
+.fs12 {
+	font-size: 12px !important;
+}
+
+.fs11 {
+	font-size: 11px !important;
+}
+
+.fs10 {
+	font-size: 10px !important;
+}
+
+.fs9 {
+	font-size: 9px !important;
+}
+
+.normal {
+	font-weight: normal !important;
+}
+
+.inline-block {
+	display: inline-block !important;
+}
+
+.block {
+	display: block !important;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.spacer {
+	height: 7px;
+}
+
+.wsnormal {
+	white-space: normal !important;
+}
+
+.wsnowrap {
+	white-space: nowrap !important;
+}
