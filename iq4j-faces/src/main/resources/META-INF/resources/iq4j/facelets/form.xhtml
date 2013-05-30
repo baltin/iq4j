@@ -51,7 +51,7 @@
 									 action="#{action1}"
 									 styleClass="cmp_form_ok left"
 									 process="@form" 
-									 icon="icon-ok" >
+									 icon="i-checkmark icon-white" >
 									 
 						<iq:update onSuccess="#{updateOnSuccess}" updateFormOnSuccess="#{!dialog}"/>
 						<iq:closeDialog enabled="#{dialog}" considerFacesValidation="true"/>
@@ -66,7 +66,7 @@
 									 id="cancel"
 									 styleClass="cmp_form_cancel right"
 									 process="@this"
-									 icon="icon-cancel" 
+									 icon="i-cross icon-white" 
 									 partialSubmit="true"
 									 update="#{updateOnCancel}"
 									 action="#{action2}">

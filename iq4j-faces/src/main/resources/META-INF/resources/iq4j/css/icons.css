@@ -5,21 +5,10 @@
 	margin-top:-1px;
 }
 
-.ui-menuitem-link.ui-state-hover > [class^="i-"],
-.ui-menuitem-link.ui-state-hover > [class*=" i-"] { 
+/** Override for white icon **/
+.icon-white {
 	background-image: url(#{resource['iq4j:gfx/icons_light.png']}) !important;
 }
-
-/* Save-Cancel Button White Icons */
-.icon-ok {
-	background-image: url(#{resource['iq4j:gfx/icons_light.png']}) !important;
-	background-position: -728px 0; width: 16px; height: 16px;
-}
-
-.icon-cancel {
-	background-image: url(#{resource['iq4j:gfx/icons_light.png']}) !important;
-	background-position: -910px 0; width: 16px; height: 16px;
-} 
 
 .i-add-file{ background-position: 0 0; width: 16px; height: 16px; } 
 .i-add-folder{ background-position: -26px 0; width: 16px; height: 16px; } 

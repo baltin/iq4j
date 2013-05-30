@@ -67,7 +67,7 @@
 												 action="#{cc.attrs.saveAction}"
 												 styleClass="cmp_form_ok left"
 												 process="@form" 
-												 icon="icon-ok" >
+												 icon="i-checkmark icon-white" >
 												 
 									<iq:update onSuccess="#{cc.attrs.updateOnSucceed}" onFailure="cc.attrs.updateOnFailed" updateFormOnSuccess="false"  />
 									<iq:closeDialog considerFacesValidation="true" />
@@ -78,7 +78,7 @@
 												 id="cancel"
 												 styleClass="cmp_form_cancel right"
 												 process="@this"
-												 icon="icon-cancel"
+												 icon="i-cross icon-white"
 												 update="#{cc.attrs.updateOnCancel}" 
 												 action="#{cc.attrs.cancelAction}">
 									
