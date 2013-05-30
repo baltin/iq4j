@@ -32,7 +32,9 @@
 		<composite:attribute name="inputStyle" type="java.lang.String"/>		
 		<composite:attribute name="styleClass" default="cmp_input" type="java.lang.String"/>
 		<composite:attribute name="labelStyleClass" default="" type="java.lang.String"/>
-		<composite:attribute name="required" default="false" type="java.lang.Boolean"/>		
+		<composite:attribute name="required" default="false" type="java.lang.Boolean"/>	
+			
+		<composite:attribute name="requiredMsg" default="can not be empty" type="java.lang.String"/>
 		<composite:attribute name="showErrorMsg" default="true" type="java.lang.Boolean"/>
 		
 		<composite:editableValueHolder name="input" targets="i" /> 
@@ -49,7 +51,13 @@
 			
 			<h:panelGroup styleClass="cmp_blck" layout="block">
 				
-				<p:selectOneMenu id="i" value="#{cc.attrs.value}" styleClass="#{cc.attrs.inputStyleClass}" editable="#{cc.attrs.editable}" style="#{cc.attrs.inputStyle}" >				
+				<p:selectOneMenu id="i" 
+								 value="#{cc.attrs.value}" 
+								 styleClass="#{cc.attrs.inputStyleClass}" 
+								 editable="#{cc.attrs.editable}" 
+								 style="#{cc.attrs.inputStyle}" 
+								 required="#{cc.attrs.required}"
+								 requiredMessage="#{cc.attrs.requiredMsg}">				
 					
 					<c:if test="#{cc.attrs.noSelectionLabel ne null}">
 					
