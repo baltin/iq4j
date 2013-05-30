@@ -3,6 +3,8 @@
 	background-image: url(#{resource['iq4j:gfx/icons.png']}) !important;
 	background-repeat: no-repeat;
 	margin-top:-1px;
+	width: 16px;
+	height: 16px;
 }
 
 /** Override for white icon **/
@@ -10,117 +12,117 @@
 	background-image: url(#{resource['iq4j:gfx/icons_light.png']}) !important;
 }
 
-.i-add-file{ background-position: 0 0; width: 16px; height: 16px; } 
-.i-add-folder{ background-position: -26px 0; width: 16px; height: 16px; } 
-.i-add-list{ background-position: -52px 0; width: 16px; height: 16px; } 
-.i-airport{ background-position: -78px 0; width: 16px; height: 16px; } 
-.i-alarm_clock{ background-position: -104px 0; width: 16px; height: 16px; } 
-.i-arrow-down{ background-position: -130px 0; width: 16px; height: 16px; } 
-.i-arrow-down1{ background-position: -156px 0; width: 16px; height: 16px; } 
-.i-arrow-left{ background-position: -182px 0; width: 16px; height: 16px; } 
-.i-arrow-left1{ background-position: -208px 0; width: 16px; height: 16px; } 
-.i-arrow-left2{ background-position: -234px 0; width: 16px; height: 16px; } 
-.i-arrow-left3{ background-position: -260px 0; width: 16px; height: 16px; } 
-.i-arrow-right{ background-position: -286px 0; width: 16px; height: 16px; } 
-.i-arrow-right1{ background-position: -312px 0; width: 16px; height: 16px; } 
-.i-arrow-right2{ background-position: -338px 0; width: 16px; height: 16px; } 
-.i-arrow-right3{ background-position: -364px 0; width: 16px; height: 16px; } 
-.i-arrow-up{ background-position: -390px 0; width: 16px; height: 16px; } 
-.i-arrow-up1{ background-position: -416px 0; width: 16px; height: 16px; } 
-.i-attach{ background-position: -442px 0; width: 16px; height: 16px; } 
-.i-available_updates{ background-position: -468px 0; width: 16px; height: 16px; } 
-.i-bank{ background-position: -494px 0; width: 16px; height: 16px; } 
-.i-bank_cards{ background-position: -520px 0; width: 16px; height: 16px; } 
-.i-banknotes{ background-position: -546px 0; width: 16px; height: 16px; } 
-.i-bar{ background-position: -572px 0; width: 16px; height: 16px; } 
-.i-book{ background-position: -598px 0; width: 16px; height: 16px; } 
-.i-bullet{ background-position: -624px 0; width: 16px; height: 16px; } 
-.i-cafe{ background-position: -650px 0; width: 16px; height: 16px; } 
-.i-calendar{ background-position: -676px 0; width: 16px; height: 16px; } 
-.i-cancel{ background-position: -702px 0; width: 16px; height: 16px; } 
-.i-checkmark{ background-position: -728px 0; width: 16px; height: 16px; } 
-.i-city{ background-position: -754px 0; width: 16px; height: 16px; } 
-.i-cllipboard{ background-position: -780px 0; width: 16px; height: 16px; } 
-.i-clock{ background-position: -806px 0; width: 16px; height: 16px; } 
-.i-contacts{ background-position: -832px 0; width: 16px; height: 16px; } 
-.i-contacts2{ background-position: -858px 0; width: 16px; height: 16px; } 
-.i-copy{ background-position: -884px 0; width: 16px; height: 16px; } 
-.i-cross{ background-position: -910px 0; width: 16px; height: 16px; } 
-.i-date_from{ background-position: -936px 0; width: 16px; height: 15px; } 
-.i-date_to{ background-position: -962px 0; width: 16px; height: 15px; } 
-.i-delete{ background-position: -988px 0; width: 16px; height: 16px; } 
-.i-document{ background-position: -1014px 0; width: 16px; height: 16px; } 
-.i-download{ background-position: -1040px 0; width: 16px; height: 16px; } 
-.i-edit{ background-position: -1066px 0; width: 16px; height: 16px; } 
-.i-error{ background-position: -1092px 0; width: 16px; height: 16px; } 
-.i-excel{ background-position: -1118px 0; width: 16px; height: 16px; } 
-.i-eye{ background-position: -1144px 0; width: 16px; height: 16px; } 
-.i-file-send{ background-position: -1170px 0; width: 16px; height: 16px; } 
-.i-file{ background-position: -1196px 0; width: 16px; height: 16px; } 
-.i-filter-empty{ background-position: -1222px 0; width: 16px; height: 16px; } 
-.i-filter-filled{ background-position: -1248px 0; width: 16px; height: 16px; } 
-.i-first{ background-position: -1274px 0; width: 16px; height: 16px; } 
-.i-folder{ background-position: -1300px 0; width: 16px; height: 16px; } 
-.i-folder1{ background-position: -1326px 0; width: 16px; height: 16px; } 
-.i-gas_station{ background-position: -1352px 0; width: 16px; height: 16px; } 
-.i-globe{ background-position: -1378px 0; width: 16px; height: 16px; } 
-.i-handshake{ background-position: -1404px 0; width: 16px; height: 16px; } 
-.i-help{ background-position: -1430px 0; width: 16px; height: 16px; } 
-.i-home{ background-position: -1456px 0; width: 16px; height: 16px; } 
-.i-hospital{ background-position: -1482px 0; width: 16px; height: 16px; } 
-.i-hotel{ background-position: -1508px 0; width: 16px; height: 16px; } 
-.i-idea{ background-position: -1534px 0; width: 16px; height: 16px; } 
-.i-importance-high{ background-position: -1560px 0; width: 16px; height: 16px; } 
-.i-importance-low{ background-position: -1586px 0; width: 16px; height: 16px; } 
-.i-info{ background-position: -1612px 0; width: 16px; height: 16px; } 
-.i-key{ background-position: -1638px 0; width: 16px; height: 16px; } 
-.i-last{ background-position: -1664px 0; width: 16px; height: 16px; } 
-.i-link{ background-position: -1690px 0; width: 16px; height: 16px; } 
-.i-list{ background-position: -1716px 0; width: 16px; height: 16px; } 
-.i-login{ background-position: -1742px 0; width: 16px; height: 16px; } 
-.i-logout{ background-position: -1768px 0; width: 16px; height: 16px; } 
-.i-magic-wand{ background-position: -1794px 0; width: 16px; height: 16px; } 
-.i-map-marker{ background-position: -1820px 0; width: 16px; height: 16px; } 
-.i-minus{ background-position: -1846px 0; width: 16px; height: 16px; } 
-.i-minus2{ background-position: -1872px 0; width: 16px; height: 16px; } 
-.i-minus3{ background-position: -1898px 0; width: 16px; height: 16px; } 
-.i-newspaper{ background-position: -1924px 0; width: 16px; height: 16px; } 
-.i-next{ background-position: -1950px 0; width: 16px; height: 16px; } 
-.i-ok{ background-position: -1976px 0; width: 16px; height: 16px; } 
-.i-organization{ background-position: 0 -26px; width: 16px; height: 16px; } 
-.i-overview{ background-position: -26px -26px; width: 16px; height: 16px; } 
-.i-overview1{ background-position: -52px -26px; width: 16px; height: 16px; } 
-.i-pdf{ background-position: -78px -26px; width: 16px; height: 16px; } 
-.i-phone1{ background-position: -104px -26px; width: 16px; height: 16px; } 
-.i-phone2{ background-position: -130px -26px; width: 16px; height: 16px; } 
-.i-plus{ background-position: -156px -26px; width: 16px; height: 16px; } 
-.i-plus2{ background-position: -182px -26px; width: 16px; height: 16px; } 
-.i-plus3{ background-position: -208px -26px; width: 16px; height: 16px; } 
-.i-previous{ background-position: -234px -26px; width: 16px; height: 16px; } 
-.i-printer{ background-position: -260px -26px; width: 16px; height: 16px; } 
-.i-private{ background-position: -286px -26px; width: 16px; height: 16px; } 
-.i-public{ background-position: -312px -26px; width: 16px; height: 16px; } 
-.i-redo{ background-position: -338px -26px; width: 16px; height: 16px; } 
-.i-refresh{ background-position: -364px -26px; width: 16px; height: 16px; } 
-.i-save{ background-position: -390px -26px; width: 16px; height: 16px; } 
-.i-save_as{ background-position: -416px -26px; width: 16px; height: 16px; } 
-.i-search{ background-position: -442px -26px; width: 16px; height: 16px; } 
-.i-settings{ background-position: -468px -26px; width: 16px; height: 16px; } 
-.i-settings2{ background-position: -494px -26px; width: 16px; height: 16px; } 
-.i-settings3{ background-position: -520px -26px; width: 16px; height: 16px; } 
-.i-settings4{ background-position: -546px -26px; width: 16px; height: 16px; } 
-.i-shoping_cart{ background-position: -572px -26px; width: 16px; height: 16px; } 
-.i-solutions{ background-position: -598px -26px; width: 16px; height: 16px; } 
-.i-star{ background-position: -624px -26px; width: 16px; height: 16px; } 
-.i-sync{ background-position: -650px -26px; width: 16px; height: 16px; } 
-.i-tag{ background-position: -676px -26px; width: 16px; height: 16px; } 
-.i-text{ background-position: -702px -26px; width: 16px; height: 16px; } 
-.i-today{ background-position: -728px -26px; width: 16px; height: 16px; } 
-.i-trash-empty{ background-position: -754px -26px; width: 16px; height: 16px; } 
-.i-trash-full{ background-position: -780px -26px; width: 16px; height: 16px; } 
-.i-undo{ background-position: -806px -26px; width: 16px; height: 16px; } 
-.i-user{ background-position: -832px -26px; width: 16px; height: 16px; } 
-.i-word{ background-position: -858px -26px; width: 16px; height: 16px; } 
-.i-world{ background-position: -884px -26px; width: 16px; height: 16px; } 
-.i-zoom-in{ background-position: -910px -26px; width: 16px; height: 16px; } 
-.i-zoom-out{ background-position: -936px -26px; width: 16px; height: 16px; }
+.i-add-file{ background-position: 0 0;} 
+.i-add-folder{ background-position: -26px 0;} 
+.i-add-list{ background-position: -52px 0;} 
+.i-airport{ background-position: -78px 0;} 
+.i-alarm_clock{ background-position: -104px 0;} 
+.i-arrow-down{ background-position: -130px 0;} 
+.i-arrow-down1{ background-position: -156px 0;} 
+.i-arrow-left{ background-position: -182px 0;} 
+.i-arrow-left1{ background-position: -208px 0;} 
+.i-arrow-left2{ background-position: -234px 0;} 
+.i-arrow-left3{ background-position: -260px 0;} 
+.i-arrow-right{ background-position: -286px 0;} 
+.i-arrow-right1{ background-position: -312px 0;} 
+.i-arrow-right2{ background-position: -338px 0;} 
+.i-arrow-right3{ background-position: -364px 0;} 
+.i-arrow-up{ background-position: -390px 0;} 
+.i-arrow-up1{ background-position: -416px 0;} 
+.i-attach{ background-position: -442px 0;} 
+.i-available_updates{ background-position: -468px 0;} 
+.i-bank{ background-position: -494px 0;} 
+.i-bank_cards{ background-position: -520px 0;} 
+.i-banknotes{ background-position: -546px 0;} 
+.i-bar{ background-position: -572px 0;} 
+.i-book{ background-position: -598px 0;} 
+.i-bullet{ background-position: -624px 0;} 
+.i-cafe{ background-position: -650px 0;} 
+.i-calendar{ background-position: -676px 0;} 
+.i-cancel{ background-position: -702px 0;} 
+.i-checkmark{ background-position: -728px 0;} 
+.i-city{ background-position: -754px 0;} 
+.i-cllipboard{ background-position: -780px 0;} 
+.i-clock{ background-position: -806px 0;} 
+.i-contacts{ background-position: -832px 0;} 
+.i-contacts2{ background-position: -858px 0;} 
+.i-copy{ background-position: -884px 0;} 
+.i-cross{ background-position: -910px 0;} 
+.i-date_from{ background-position: -936px 0;} 
+.i-date_to{ background-position: -962px 0;} 
+.i-delete{ background-position: -988px 0;} 
+.i-document{ background-position: -1014px 0;} 
+.i-download{ background-position: -1040px 0;} 
+.i-edit{ background-position: -1066px 0;} 
+.i-error{ background-position: -1092px 0;} 
+.i-excel{ background-position: -1118px 0;} 
+.i-eye{ background-position: -1144px 0;} 
+.i-file-send{ background-position: -1170px 0;} 
+.i-file{ background-position: -1196px 0;} 
+.i-filter-empty{ background-position: -1222px 0;} 
+.i-filter-filled{ background-position: -1248px 0;} 
+.i-first{ background-position: -1274px 0;} 
+.i-folder{ background-position: -1300px 0;} 
+.i-folder1{ background-position: -1326px 0;} 
+.i-gas_station{ background-position: -1352px 0;} 
+.i-globe{ background-position: -1378px 0;} 
+.i-handshake{ background-position: -1404px 0;} 
+.i-help{ background-position: -1430px 0;} 
+.i-home{ background-position: -1456px 0;} 
+.i-hospital{ background-position: -1482px 0;} 
+.i-hotel{ background-position: -1508px 0;} 
+.i-idea{ background-position: -1534px 0;} 
+.i-importance-high{ background-position: -1560px 0;} 
+.i-importance-low{ background-position: -1586px 0;} 
+.i-info{ background-position: -1612px 0;} 
+.i-key{ background-position: -1638px 0;} 
+.i-last{ background-position: -1664px 0;} 
+.i-link{ background-position: -1690px 0;} 
+.i-list{ background-position: -1716px 0;} 
+.i-login{ background-position: -1742px 0;} 
+.i-logout{ background-position: -1768px 0;} 
+.i-magic-wand{ background-position: -1794px 0;} 
+.i-map-marker{ background-position: -1820px 0;} 
+.i-minus{ background-position: -1846px 0;} 
+.i-minus2{ background-position: -1872px 0;} 
+.i-minus3{ background-position: -1898px 0;} 
+.i-newspaper{ background-position: -1924px 0;} 
+.i-next{ background-position: -1950px 0;} 
+.i-ok{ background-position: -1976px 0;} 
+.i-organization{ background-position: 0 -26px;} 
+.i-overview{ background-position: -26px -26px;} 
+.i-overview1{ background-position: -52px -26px;} 
+.i-pdf{ background-position: -78px -26px;} 
+.i-phone1{ background-position: -104px -26px;} 
+.i-phone2{ background-position: -130px -26px;} 
+.i-plus{ background-position: -156px -26px;} 
+.i-plus2{ background-position: -182px -26px;} 
+.i-plus3{ background-position: -208px -26px;} 
+.i-previous{ background-position: -234px -26px;} 
+.i-printer{ background-position: -260px -26px;} 
+.i-private{ background-position: -286px -26px;} 
+.i-public{ background-position: -312px -26px;} 
+.i-redo{ background-position: -338px -26px;} 
+.i-refresh{ background-position: -364px -26px;} 
+.i-save{ background-position: -390px -26px;} 
+.i-save_as{ background-position: -416px -26px;} 
+.i-search{ background-position: -442px -26px;} 
+.i-settings{ background-position: -468px -26px;} 
+.i-settings2{ background-position: -494px -26px;} 
+.i-settings3{ background-position: -520px -26px;} 
+.i-settings4{ background-position: -546px -26px;} 
+.i-shoping_cart{ background-position: -572px -26px;} 
+.i-solutions{ background-position: -598px -26px;} 
+.i-star{ background-position: -624px -26px;} 
+.i-sync{ background-position: -650px -26px;} 
+.i-tag{ background-position: -676px -26px;} 
+.i-text{ background-position: -702px -26px;} 
+.i-today{ background-position: -728px -26px;} 
+.i-trash-empty{ background-position: -754px -26px;} 
+.i-trash-full{ background-position: -780px -26px;} 
+.i-undo{ background-position: -806px -26px;} 
+.i-user{ background-position: -832px -26px;} 
+.i-word{ background-position: -858px -26px;} 
+.i-world{ background-position: -884px -26px;} 
+.i-zoom-in{ background-position: -910px -26px;} 
+.i-zoom-out{ background-position: -936px -26px;}
