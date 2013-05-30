@@ -1,5 +1,6 @@
 package com.iq4j.persistence.service;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -9,16 +10,18 @@ import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Order;
 
+import org.hibernate.proxy.HibernateProxy;
 import org.jboss.seam.transaction.Transactional;
 
 @Transactional
 public class PersistenceUtil {
-	
+
 	@Inject
 	protected transient EntityManager entityManager;
-	
-	public PersistenceUtil() {}
-	
+
+	public PersistenceUtil() {
+	}
+
 	public PersistenceUtil(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
@@ -49,9 +52,7 @@ public class PersistenceUtil {
 	public <T> T findById(final Class<T> type, final Object id) throws NoResultException {
 		Class<?> clazz = getObjectClass(type);
 		T result = (T) getEntityManager().find(clazz, id);
-		if (result == null) {
-			throw new NoResultException("No object of type: " + type + " with ID: " + id);
-		}
+		if (result == null) { throw new NoResultException("No object of type: " + type + " with ID: " + id); }
 		return result;
 	}
 
@@ -90,7 +91,6 @@ public class PersistenceUtil {
 		return query.getResultList();
 	}
 
-	
 	public <T> List<T> findAll(final Class<T> type) {
 		CriteriaQuery<T> query = query(type);
 		query.from(type);
@@ -143,6 +143,14 @@ public class PersistenceUtil {
 
 	public <T> boolean isManaged(T instance) {
 		return instance != null && getEntityManager().contains(instance);
+	}
+
+	public <T> Serializable getEntityId(T entity) {
+		if (entity == null) { return null; }
+		if (entity instanceof HibernateProxy) { 
+			return (Serializable) ((HibernateProxy) entity).getHibernateLazyInitializer().getIdentifier(); 
+		}
+		return (Serializable) getEntityManager().getEntityManagerFactory().getPersistenceUnitUtil().getIdentifier(entity);
 	}
 
 }
