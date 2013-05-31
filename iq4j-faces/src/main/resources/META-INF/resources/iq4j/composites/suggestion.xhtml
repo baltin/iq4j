@@ -32,7 +32,8 @@
 		<composite:attribute name="styleClass" default="cmp_input" type="java.lang.String"/>
 		<composite:attribute name="labelStyleClass" default="" type="java.lang.String"/>
 		<composite:attribute name="required" default="false" type="java.lang.Boolean"/>		
-		<composite:attribute name="showErrorMsg" default="true" type="java.lang.Boolean"/>	 
+		<composite:attribute name="showErrorMsg" default="true" type="java.lang.Boolean"/>
+		<composite:attribute name="errorDisplay" default="text" type="java.lang.String"/> 
 		
 		<composite:editableValueHolder name="input" targets="i" />   
 			
@@ -74,7 +75,10 @@
 			
 			</h:panelGroup>
 			
-			<h:message id="msg" for="#{cc.id}" rendered="#{cc.attrs.showErrorMsg}" styleClass="cmp_errmsg cmp_#{cc.attrs.labelPosition}err cmp_blck"/> 
+			<p:message id="msg"
+					   rendered="#{cc.attrs.showErrorMsg}"
+					   display="#{cc.attrs.errorDisplay}"
+					   for="#{cc.id}" />			
 					   						   
 			<pe:tooltip for="#{cc.id}" rendered="#{!cc.attrs.showErrorMsg}" id="tt" position="left center" targetPosition="right center" />
 				
