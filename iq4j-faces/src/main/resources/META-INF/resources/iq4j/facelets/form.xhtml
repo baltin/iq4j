@@ -4,20 +4,20 @@
 		      	xmlns:h="http://java.sun.com/jsf/html"
 		      	xmlns:f="http://java.sun.com/jsf/core"
 		      	xmlns:ui="http://java.sun.com/jsf/facelets"
-		      	xmlns:n="http://iq4j.com/ui"
+		      	xmlns:iq="http://iq4j.com/ui"
 		      	xmlns:o="http://omnifaces.org/ui"
 		      	xmlns:c="http://java.sun.com/jsp/jstl/core"
 		      	xmlns:p="http://primefaces.org/ui"
 		      	xmlns:pe="http://primefaces.org/ui/extensions">
 		
-	<n:default var="id" value="f"/>      	 	 
-	<n:default var="rendered" value="true"/>      	 	 
-	<n:default var="dialog" value="false"/>
+	<iq:default var="id" value="f"/>      	 	 
+	<iq:default var="rendered" value="true"/>      	 	 
+	<iq:default var="dialog" value="false"/>
 	
-	<n:default var="header" value=""/>	 
-	<n:default var="showHeader" value="#{header ne ''}"/>
-	<n:default var="updateOnSuccess" value=""/>
-	<n:default var="updateOnCancel" value="@none"/>
+	<iq:default var="header" value=""/>	 
+	<iq:default var="showHeader" value="#{header ne ''}"/>
+	<iq:default var="updateOnSuccess" value=""/>
+	<iq:default var="updateOnCancel" value="@none"/>
 	 	
 	<o:methodParam name="action1" value="#{saveAction}" />
 	<o:methodParam name="action2" value="#{cancelAction}" />
@@ -42,7 +42,6 @@
 			
 			</div>
 			
-			
 			<div class="cmp_form_actions ui-panel-footer ui-widget-content ">
 			
 				<ui:insert name="actions" >
@@ -52,17 +51,14 @@
 									 action="#{action1}"
 									 styleClass="cmp_form_ok left"
 									 process="@form" 
-									 icon="icon-ok" >
+									 icon="i-checkmark icon-white" >
 									 
-						<n:update onSuccess="#{updateOnSuccess}" updateFormOnSuccess="#{!dialog}"/>
-						<n:closeDialog enabled="#{dialog}" considerFacesValidation="true"/>
+						<iq:update onSuccess="#{updateOnSuccess}" updateFormOnSuccess="#{!dialog}"/>
+						<iq:closeDialog enabled="#{dialog}" considerFacesValidation="true"/>
 						
 						<ui:insert name="saveListeners"/>
 						
-								 
 					</p:commandButton>	
-					
-					
 					
 					<ui:insert name="customActions" />
 					
@@ -70,16 +66,13 @@
 									 id="cancel"
 									 styleClass="cmp_form_cancel right"
 									 process="@this"
-									 icon="icon-cancel" 
+									 icon="i-cross icon-white" 
 									 partialSubmit="true"
 									 update="#{updateOnCancel}"
 									 action="#{action2}">
 						
-						<n:closeDialog enabled="#{dialog}" />
+						<iq:closeDialog enabled="#{dialog}" />
 						
-						<pe:resetInput for="panel" />	
-						
-									 
 					</p:commandButton >
 					
 					<p:blockUI block="panel" trigger="save"/> 
@@ -88,14 +81,10 @@
 				<div class="clear" />
 			</div>
 				
-		
 		</p:panel>	
 					
-		   	 
-		
 	</o:form>
 	
 	<ui:insert name="outerForm" />
-	
 		
 </ui:composition>

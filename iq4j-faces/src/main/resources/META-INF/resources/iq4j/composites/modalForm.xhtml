@@ -33,8 +33,6 @@
 			<composite:attribute name="validationErrorGroup" type="java.lang.String" default=""/>
 			<composite:attribute name="contentStyleClass" type="java.lang.String" default=""/>
 			
-		
-								
 		</composite:interface>
 		
 		<composite:implementation>
@@ -61,7 +59,6 @@
 							
 							</div>
 							
-							
 							<div class="cmp_form_actions ui-panel-footer ui-widget-content ">
 							
 				
@@ -70,7 +67,7 @@
 												 action="#{cc.attrs.saveAction}"
 												 styleClass="cmp_form_ok left"
 												 process="@form" 
-												 icon="icon-ok" >
+												 icon="i-checkmark icon-white" >
 												 
 									<iq:update onSuccess="#{cc.attrs.updateOnSucceed}" onFailure="cc.attrs.updateOnFailed" updateFormOnSuccess="false"  />
 									<iq:closeDialog considerFacesValidation="true" />
@@ -81,12 +78,11 @@
 												 id="cancel"
 												 styleClass="cmp_form_cancel right"
 												 process="@this"
-												 icon="icon-cancel"
+												 icon="i-cross icon-white"
 												 update="#{cc.attrs.updateOnCancel}" 
 												 action="#{cc.attrs.cancelAction}">
 									
 									<iq:closeDialog  />
-									<pe:resetInput for="ctx" />	
 												 
 								</p:commandButton >
 								
@@ -94,7 +90,6 @@
 								
 							</div>
 								
-						
 						</p:panel>	
 									
 						<p:blockUI block="ctx" trigger="save"/>    	 

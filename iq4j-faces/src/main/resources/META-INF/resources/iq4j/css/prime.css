@@ -66,6 +66,7 @@ select.ui-column-filter {
 	margin-top: 0.2em;
 }
 
-.ui-tooltip-content {
-	color: red;
+.ui-menuitem-link.ui-state-hover > [class^="i-"],
+.ui-menuitem-link.ui-state-hover > [class*=" i-"] { 
+	background-image: url(#{resource['iq4j:gfx/icons_light.png']}) !important;
 }

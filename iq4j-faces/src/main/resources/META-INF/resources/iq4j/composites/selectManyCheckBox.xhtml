@@ -41,10 +41,8 @@
 				
 	</composite:interface>
 	
-	<composite:implementation xmlns:n="http://iq4j.com/ui">
+	<composite:implementation xmlns:iq="http://iq4j.com/ui">
 
-		<h:outputScript library="iq4j" name="js/selectManyCheckBox.js" target="head" />
-	
 		<h:panelGroup id="ctx" layout="block" styleClass="#{cc.attrs.styleClass} cmp_smc_gr" >
 			
 			<h:panelGroup styleClass="cmp_smc_lbl cmp_blck cmp_lbl cmp_#{cc.attrs.labelPosition}lbl #{cc.attrs.labelStyleClass}" rendered="#{cc.attrs.showLabel}">
@@ -66,7 +64,7 @@
 					
 						<c:when test="#{cc.attrs.converterType eq 'entity'}">
 							<c:if test="#{cc.attrs.entity ne null}">
-								<n:entityConverter entity="#{cc.attrs.entity}" />
+								<iq:entityConverter entity="#{cc.attrs.entity}" />
 							</c:if>
 						</c:when>
 						
