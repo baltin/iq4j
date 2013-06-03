@@ -3,6 +3,7 @@
 				xmlns:h="http://java.sun.com/jsf/html"
 				xmlns:composite="http://java.sun.com/jsf/composite"
 				xmlns:pe="http://primefaces.org/ui/extensions"
+				xmlns:p="http://primefaces.org/ui"
 				xmlns:f="http://java.sun.com/jsf/core"
 				xmlns:ui="http://java.sun.com/jsf/facelets">
 	
@@ -17,6 +18,7 @@
 		<composite:attribute name="labelStyleClass" default="" type="java.lang.String"/>
 		<composite:attribute name="required" default="false" type="java.lang.Boolean"/>		
 		<composite:attribute name="showErrorMsg" default="true" type="java.lang.Boolean"/>
+		<composite:attribute name="errorDisplay" default="text" type="java.lang.String"/>
 			
 	</composite:interface>
 	
@@ -37,10 +39,10 @@
 				<composite:insertChildren />			   		
 			</h:panelGroup>
 			
-			<h:message id="msg" 
-					   styleClass="cmp_errmsg cmp_#{cc.attrs.labelPosition}err cmp_blck"
-					   for="#{cc.id}"
-					   rendered="#{cc.attrs.showErrorMsg}"/> 
+			<p:message id="msg"
+					   rendered="#{cc.attrs.showErrorMsg}"
+					   display="#{cc.attrs.errorDisplay}"
+					   for="#{cc.id}" />
 					   						   
 			<pe:tooltip for="#{cc.id}" rendered="#{!cc.attrs.showErrorMsg}" id="tt" position="left center" targetPosition="right center" />
 				
