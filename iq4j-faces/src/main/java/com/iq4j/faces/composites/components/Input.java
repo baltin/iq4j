@@ -14,8 +14,6 @@ import javax.faces.component.UIMessage;
 import javax.faces.component.UINamingContainer;
 import javax.faces.context.FacesContext;
 
-import org.primefaces.extensions.component.tooltip.Tooltip;
-
 import com.iq4j.faces.composites.CompositeHelper;
 import com.iq4j.faces.composites.GeneralKeys;
 
@@ -51,11 +49,6 @@ public class Input extends UIComponentBase implements NamingContainer {
 			if(CompositeHelper.getBooleanValue(this, GeneralKeys.showErrorMsg.toString())){				
 				getMessageComponent().setFor(invalidInput.getId());
 			}
-			else 
-			{
-				getTooltipComponent().setFor(invalidInput.getId());
-			}
-			
 		}
 		
 	}
@@ -109,9 +102,6 @@ public class Input extends UIComponentBase implements NamingContainer {
 		return (UIMessage)findComponent(GeneralKeys.messageComponent.toString());
 	}
 
-	public Tooltip getTooltipComponent(){
-		return (Tooltip)findComponent(GeneralKeys.tooltipComponent.toString());
-	}
 	
 	public List<UIInput> getInvalidInputs() {
 		return invalidInputs;

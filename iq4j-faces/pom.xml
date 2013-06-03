@@ -39,13 +39,6 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>org.primefaces.extensions</groupId>
-			<artifactId>primefaces-extensions</artifactId>
-			<version>${prime-ext.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
 
 		<dependency>
 			<groupId>com.iq4j</groupId>

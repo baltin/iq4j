@@ -54,8 +54,6 @@
 						<p:ajax event="dateSelect" partialSubmit="true" disabled="#{!cc.attrs.ajax}" update="@none" process="@this"/>	
 				</p:calendar>
 							
-				<pe:tooltip for="min"/>
-				
 				<h:outputText value=" #{cc.attrs.divider} " styleClass="cmp_sp" />
 				
 				<p:calendar id="max"
@@ -68,9 +66,7 @@
 							label="End Date">
 						<p:ajax event="dateSelect" partialSubmit="true" disabled="#{!cc.attrs.ajax}" update="@none" process="@this"/>	
 				</p:calendar>			
-							
-				<pe:tooltip for="max"/>
-				
+											
 				<h:inputHidden id="validator">
 					<f:validator  validatorId="#{cc.attrs.validatorId}" />
 				</h:inputHidden>
@@ -81,8 +77,6 @@
 					   rendered="#{cc.attrs.showErrorMsg}"
 					   display="#{cc.attrs.errorDisplay}"
 					   for="#{cc.id}" /> 
-					   						   
-			<pe:tooltip for="#{cc.id}" rendered="#{!cc.attrs.showErrorMsg}" id="tt" position="left center" targetPosition="right center" />
 				
 		</h:panelGroup>
 			

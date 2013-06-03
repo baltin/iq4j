@@ -2,7 +2,6 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:composite="http://java.sun.com/jsf/composite"
-	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
@@ -58,9 +57,7 @@
 						<p:ajax process="@this" disabled="#{!cc.attrs.immediateProcess}"/>		  
 					
 					</p:inputText>
-					
-					<pe:tooltip for="min"/>
-					
+										
 					<h:outputText value="#{cc.attrs.divider}" styleClass="cmp_sp" />
 					
 					<p:inputText  id="max" 
@@ -78,8 +75,6 @@
 							  
 					</p:inputText>			  
 					
-					<pe:tooltip for="max" />
-					
 					<h:inputHidden id="validator">
 						<f:validator  validatorId="#{cc.attrs.validatorId}" />
 					</h:inputHidden>
@@ -90,13 +85,8 @@
 					   rendered="#{cc.attrs.showErrorMsg}"
 					   display="#{cc.attrs.errorDisplay}"
 					   for="#{cc.id}" />
-					   						   
-			<pe:tooltip for="#{cc.id}" rendered="#{!cc.attrs.showErrorMsg}" id="tt" position="left center" targetPosition="right center" />
 				
 		</h:panelGroup>
-		
-		<pe:keyFilter for="min" mask="num"/>
-		<pe:keyFilter for="max" mask="num"/>
 	
 	</composite:implementation>
 	

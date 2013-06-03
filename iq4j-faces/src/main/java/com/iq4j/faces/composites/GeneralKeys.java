@@ -14,7 +14,6 @@ public enum GeneralKeys{
 	labelPosition,
 	labelComponent("lbl"),
 	messageComponent("msg"),
-	tooltipComponent("tt"),
 	separatorComponent("sp"),
 	validatorComponent("validator"),
 	contentPanelGroupComponent("ctx");
