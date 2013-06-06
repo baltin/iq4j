@@ -35,12 +35,11 @@
 }
 
 .cmp_input {
-	padding: 3px 0px 4px 0px;
+	padding: 4px 0;
 }
 
 .cmp_sp {
 	padding: 0 5px;
-	line-height: 28px;
 }
 
 .cmp_td {
