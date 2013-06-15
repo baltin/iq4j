@@ -8,5 +8,6 @@ public interface ObjectList<T> extends Serializable {
 	public List<T> getList();
 	public void refresh();
 	public boolean isEmptyData();
+	public int size();
 	
 }

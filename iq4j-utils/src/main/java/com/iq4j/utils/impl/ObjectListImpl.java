@@ -28,6 +28,10 @@ public abstract class ObjectListImpl<T> implements ObjectList<T> {
 		return getList() == null || getList().isEmpty();
 	}
 	
+	public int size() {
+		return getList().size();
+	}
+	
 	protected abstract List<T> load();
 
 }
