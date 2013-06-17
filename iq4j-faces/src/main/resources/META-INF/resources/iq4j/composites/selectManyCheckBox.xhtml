@@ -13,6 +13,7 @@
 	<composite:attribute name="entity" type="java.lang.String" shortDescription="Entity name for conversion. It is required when converterType value is 'entity' "/>
 	<composite:attribute name="converterType" type="java.lang.String" default="none" required="true" shortDescription="available values are &lt;b&gt;none|entity|enum&lt;/b&gt;. default : &lt;b&gt; 'none' &lt;/b&gt;"/>
 	<composite:attribute name="items" required="true" type="com.iq4j.faces.api.SelectItems" />
+	<composite:attribute name="itemDisabled" default="false" type="java.lang.Boolean" />
 	
 	<composite:attribute name="layout" type="java.lang.String" default="pageDirection"/>
 
@@ -68,6 +69,7 @@
 				
 				<f:selectItems value="#{cc.attrs.items.list}" 
 							   var="var" 
+							   itemDisabled="#{cc.attrs.itemDisabled}"
 							   itemLabel="#{cc.attrs.items.labelForInstance(var)}" 
 							   itemValue="#{cc.attrs.items.valueForInstance(var)}" />
 				
